@@ -1,0 +1,12 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+first_task:
+  user: eugene
+  body: "first test task"
+  start_in: 2011-03-23 17:24:20
+  finish_by: 2011-03-23
+
+#two:
+ # body: MyString
+  #start_in: 2011-03-23 17:24:20
+  #finish_by: 2011-03-23

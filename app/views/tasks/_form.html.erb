@@ -1,0 +1,36 @@
+<%= form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </div>
+  <div class="field">
+    <%=f.label "Durations"%><br />
+    <% for duration in Duration.all %>
+      <%= radio_button_tag 'task[duration_ids][]', duration.id,
+@task.duration_ids.include?(duration.id), :id => dom_id(duration) %>
+      <%= label_tag dom_id(duration), duration.time_limit, :class => "radio_button_label" %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :start_in %><br />
+    <%= f.datetime_select :start_in %>
+  </div>
+  <div class="field">
+    <%= f.label :finish_by %><br />
+    <%= f.date_select :finish_by %>
+  </div>
+  <div class="actions">
+    <%= submit_or_cancel(f) %>
+  </div>
+<% end %>

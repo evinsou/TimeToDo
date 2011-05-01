@@ -1,0 +1,13 @@
+<%=  div_for task do %>
+  <h3>
+    <%= link_to task.body, task %>
+    <% if task.owned_by? current_user %>
+      <span class='actions'> 
+        <%= link_to "Edit", edit_task_path(task) %>
+        <%= link_to "Delete", task, :confirm => "Are you sure?", 
+:method => :delete %>
+      </span>
+    <% end %> 
+  </h3>
+  <%= simple_format task.body %>
+<% end %>
