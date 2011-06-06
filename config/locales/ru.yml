@@ -1,0 +1,58 @@
+ru:
+  general:
+    are_you_sure: Вы уверены?
+    back: Назад
+    cancel: Отмена
+    create: Создать
+    delete: Удалить
+    edit: Редактировать
+    editing: Редактирование
+    footer: Простый менеджер задач для практики и учебы
+    email_a_friend: Email a friend
+    search: Поиск
+    send_mail: Send mail
+    show: Показать
+    title: Таскер
+    update: Обновить
+    your_name: Ваше имя
+    your_friend_email: Почтовый ящик Вашего друга
+    or: или
+  application:
+    access_denied: Для продолжения залогинтесь
+  tasks:
+    editing_task: Редактирование задачи
+    listing_tasks: Весь список задач
+    new_task: Новая задача
+    task: задача
+    create_success: Задачу создали.
+    update_success: Задау обновили.
+    tasks: задачи
+    notify_friend_success: Successfully sent a message to your friend
+  users:
+    new_user: Новый пользователь
+    edit_password: Редактировать пароль
+    editing_user: Редакция пользователя
+    create_success: Пользователя добавили.
+    update_success: Обновили данные пользователя.
+  sessions:
+    email: Почтовый ящик
+    password: Пароль
+    login: Логин
+    logout: Логоут
+    successful_login: Успешно залогинились
+    invalid_login: Неверная пара пользователь/пароль
+    logout_success: Успешно вылогинились
+
+activerecord:
+  errors:
+    models:
+      tasks:
+        attributes:
+          body:
+            blank: "Не может быть пустым"
+
+date: 
+  formats:
+    default: "%d%m%Y"
+    short: "%d %B"
+    long: "%d  %B %Y"    

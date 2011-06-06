@@ -2,4 +2,46 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  general:
+    are_you_sure: Are you sure?
+    back: Back
+    cancel: Cancel
+    create: Create
+    delete: Delete
+    edit: Edit
+    editing: Editing
+    footer: A simple task manager for exaple and training.
+    email_a_friend: Email a friend
+    search: Search
+    send_mail: Send mail
+    show: Show
+    title: Tasker
+    update: Update
+    your_name: Your name
+    your_friend_email: Your friend`s email
+    or: or
+  application:
+    access_denied: Please log in to continue
+  tasks:
+    editing_task: Editing Task
+    listing_tasks: Listing Tasks
+    new_task: New Task
+    task: task
+    create_success: Task was successfully created.
+    update_success: Task was successfully updated.
+    tasks: tasks
+    notify_friend_success: Successfully sent a message to your friend
+  users:
+    new_user: New user
+    edit_password: Edit password
+    editing_user: Editing User
+    create_success: User successfully added.
+    update_success: Updated user information successfully.
+  sessions:
+    email: Email
+    password: Password
+    login: Login
+    logout: Logout
+    successful_login: Logged in successfully
+    invalid_login: Invalid login/password combination
+    logout_success: You successfully logout 

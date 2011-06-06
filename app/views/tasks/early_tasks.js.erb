@@ -1,0 +1,6 @@
+$('#tasks').hide();
+$("<%= escape_javascript render(:file => 'tasks/early_tasks.html.erb') %>").insertAfter('#tasks');
+$('#early_tasks_link').hide();
+$('#recent_tasks_link').show();
+$('#recent_tasks').hide();
+

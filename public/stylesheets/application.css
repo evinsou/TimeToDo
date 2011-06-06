@@ -31,7 +31,7 @@ a {
 
 a:hover {
   background-color:#FF813C;
-  color:#FFFFFF;
+  color:#ffffff;
 }
 
 .notice { color: green; }
@@ -117,14 +117,32 @@ a:hover {
   margin-right: 10px;
 }
 
-#main form label.check_box_label {
+#main form .field .selectField {
+  width: 200px;
+  display: table;
+  padding: 10px 10px 10px 0px;
+  float: left;
+}
+
+#main form .field .selectField label .check_box_label {
   width: auto;
-  display: inline;
   text-align: right;
+  padding-top: 20px;
+  vertical-align: center;
+  line-height: 20px;
+  padding-right: 10px;
+  background-color: #000;
+  border: 2px solid #fbf52a;
+  border: none;
+}
+#main form .field .selectField label .radio_button_label {
+  width: auto;
+  text-align: left;
   padding-right: 10px;
   line-height: 21px;
   vertical-align: center;
-  background-color: #FFF;
+  background-color: #000;
+  border: 2px solid #fbf52a;
   border: none;
 }
 
@@ -141,9 +159,11 @@ a:hover {
   border: 2px solid #ccc;
 }
 
-#main form input[type=checkbox] {
+#main form input[type=checkbox], #main form input[type=radio] {
   margin: 4px;
-  float: left;
+  padding-top: 50px;
+  float: right;
+  border: 2px solid #ccc;
 }
 
 #main form textarea {

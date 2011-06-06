@@ -3,19 +3,30 @@
 <head>
   <title>TimeToDo</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'application' %>
+  <%= javascript_include_tag 'jquery-1.4.4.min', 'rails', 'application' %>
   <%= csrf_meta_tag %>
+
+  <script type="text/javascript" language="javascript">
+
+  $(document).ready(function(){
+    $("button").click(function () {
+      $("p").toggle();
+    });
+  });
+  </script>
 </head>
 <body>
   <div id="header">
-    <h1><%= link_to "Tasker", root_path%></h1>
+    <h1><%= link_to t('general.title'), root_path%></h1>
+    <%= language_selector %>
     <div id="user_bar">
       <% if logged_in? %>
-        <%= link_to "New Task", new_task_path %>
-        <%= link_to "Edit Passwors", edit_user_path(current_user) %>
-        <%= link_to "Logout", logout_path %>
+        <%= link_to t('tasks.new_task'), new_task_path %>
+        <%= link_to t('users.edit_password'), edit_user_path(current_user) %>
+        <%= link_to t('sessions.logout'), logout_path %>
       <% else %>
-        <%= link_to "Login", login_path%>
+        <%= link_to t('sessions.login'), login_path%>
+        <%= link_to t('users.new_user'), new_user_path%>
       <% end %>
     </div>
   </div>
@@ -25,7 +36,8 @@
     <%= yield %>
   </div>
   <div id="footer"%>
-    A simple task manager for exaple and training.
+    <p><%= t('general.footer')%> <br />
+    Page created at <%= Time.now %></p>
   </div>
 </body>
 </html>

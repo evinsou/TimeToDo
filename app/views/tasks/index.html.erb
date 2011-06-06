@@ -1,30 +1,19 @@
-<h1>Listing tasks</h1>
 
-<!--<table>
-  <tr>
-    <th>Body</th>
-    <th>Start in</th>
-    <th>Finish by</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1><%= t('tasks.listing_tasks')%></h1>
 
-<% @tasks.each do |task| %>
-  <tr>
-    <td><%= task.body %></td>
-    <td><%= task.start_in %></td>
-    <td><%= task.finish_by %></td>
-    <td><%= link_to 'Show', task %></td>
-    <td><%= link_to 'Edit', edit_task_path(task) %></td>
-    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% if logged_in? %>
+  <div id="tasks">
+    <%= render @tasks %>
+  </div>
+  
+  <br />
+  
+  <%= link_to "new task", new_task_path(@task, :format => :js), :remote => true, :id => 'new_task_link'%>
+  <%= link_to "recent tasks", recent_tasks_path(@task, :format => :js), :remote => true, :id => 'recent_tasks_link'%>
+  <%= link_to "early tasks", early_tasks_path(@task, :format => :js), :remote => true, :id => 'early_tasks_link'%>
+  
 <% end %>
-</table>-->
-<div id="tasks">
-  <%= render @tasks %>
-</div>
+  <br />
+<%= link_to t('tasks.new_task'), new_task_path %>
 
-<br />
 
-<%= link_to 'New Task', new_task_path %>

@@ -6,10 +6,33 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-user = User.create :email => 'mary@example.com', :password => 'guessit'
+user = User.create :email => 'mary@example.com', 
+                   :password => 'guessit',
+                   :password_confirmation => 'guessit'
+user = User.create :email => 'satur@example.com', 
+                   :password => 'ation',
+                   :password_confirmation => 'ation'
 
 Duration.create [{:time_limit => 'yesterday'},
                  {:time_limit => 'today'},
                  {:time_limit => 'for a week'},
                  {:time_limit => 'for a month'},
                  {:time_limit => 'for half year'}]
+
+Category.create [{:name => 'event'},
+                 {:name => 'home'},
+                 {:name => 'personal'},
+                 {:name => 'travel'},
+                 {:name => 'work'}]
+
+user.tasks.create :body => 'end scala project',
+                 :start_in => Time.now,
+                 :finish_by => Date.today + 1.month
+
+user.tasks.create :body => 'evening meeting in good place',
+                 :start_in => Time.now + 6.hour,
+                 :finish_by => Date.today + 1.day
+
+user.tasks.create :body => 'learn free-speaking ebglish',
+                 :start_in => Time.now,
+                 :finish_by => Date.today + 6.month

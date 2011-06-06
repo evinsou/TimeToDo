@@ -3,6 +3,9 @@ class TasksController < ApplicationController
   before_filter :authenticate, :except => [:index, :show]
   # GET /tasks
   # GET /tasks.xml
+
+  before_filter :check_existance
+
   def index
     @tasks = Task.all
 
@@ -12,6 +15,25 @@ class TasksController < ApplicationController
     end
   end
 
+  def recent_tasks # tasks_list
+    @tasks = Task.order("finish_by DESC")
+    flash.now.notice = "recent"
+
+    respond_to do |format|
+      format.html # recent_tasks.html.erb
+      format.js
+    end
+  end
+
+  def early_tasks # tasks_list_downward
+    @tasks = Task.order("start_in ASC")
+    flash.now.notice = "early"
+
+    respond_to do |format|
+      format.html # early_tasks.html.erb
+      format.js
+    end
+  end
   # GET /tasks/1
   # GET /tasks/1.xml
   def show
@@ -30,7 +52,8 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @task }
+      format.js  { render :file => 'tasks/new.js.erb' }
+#      format.js  { render :text => $("<%= escape_javascript render(:file => 'tasks/new.html.erb') %>").inserAfter('#tasks'); }
     end
   end
 
@@ -46,26 +69,29 @@ class TasksController < ApplicationController
     #@task = Task.new(params[:task])
     @task = current_user.tasks.new(params[:task])
 
-    respond_to do |format|
-      if @task.save
-        format.html { redirect_to(@task, :notice => 'Task was successfully created.') }
-        format.xml  { render :xml => @task, :status => :created, :location => @task }
+    if @task.save
+        respond_to do |format|
+          format.html { redirect_to @task, :notice => t('tasks.create_success') }
+          format.js  #{ render :xml => @task, :status => :created, :location => @task }
+        end
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @task.errors, :status => :unprocessable_entity }
-      end
+        respond_to do |format|
+          format.html { render :action => "new" }
+          format.js  { render 'fail_create.js.erb'}#:xml => @task.errors, :status => :unprocessable_entity }
+        end
     end
   end
+
 
   # PUT /tasks/1
   # PUT /tasks/1.xml
   def update
-#    @task = Task.find(params[:id])
+    #@task = Task.find(params[:id])
     @task = current_user.tasks.find(params[:id])
 
     respond_to do |format|
       if @task.update_attributes(params[:task])
-        format.html { redirect_to(@task, :notice => 'Task was successfully updated.') }
+        format.html { redirect_to(@task, :notice => t('tasks.update_success')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -76,14 +102,23 @@ class TasksController < ApplicationController
 
   # DELETE /tasks/1
   # DELETE /tasks/1.xml
-  def destroy
+#  def destroy
 #    @task = Task.find(params[:id])
+ #   @task = current_user.tasks.find(params[:id])
+  #  @task.destroy
+
+   # respond_to do |format|
+    #  format.html { redirect_to(tasks_url) }
+     # format.xml  { head :ok }
+   # end
+  #end
+  def destroy
     @task = current_user.tasks.find(params[:id])
     @task.destroy
 
     respond_to do |format|
-      format.html { redirect_to(tasks_url) }
-      format.xml  { head :ok }
+      format.html {redirect_to @tasks, :notice => 'Task deleted' }
+      format.js #{render :text => "$('#task_#{params[:id]}').remove();"}
     end
   end
 end
