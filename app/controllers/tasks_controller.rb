@@ -34,6 +34,20 @@ class TasksController < ApplicationController
       format.js
     end
   end
+
+  def list
+    @tasks = Task.order('tasks.position ASC')
+  end
+
+  def sort
+    @tasks = Task.all
+    @tasks.each do |task|
+      task.position = params['task'].index(task.id.to_s) + 1
+      task.save
+    end
+    render :nothing => true
+  end
+
   # GET /tasks/1
   # GET /tasks/1.xml
   def show

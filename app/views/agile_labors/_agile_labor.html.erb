@@ -1,0 +1,18 @@
+<%= div_for agile_labor do %>
+  <h3>
+    <%= agile_labor.title %>
+  </h3>
+  <p>
+    <%= agile_labor.body %><br />
+  </p>
+  <p>
+    <%= agile_labor.labor_type %>
+    <%= agile_labor.exec_order %><br />
+    <%= agile_labor.start_in %>
+  </p>
+  <span class="actions">
+    <%= link_to "Edit", edit_agile_labor_path(agile_labor) %>
+    <%= link_to "Delete", agile_labor, :confirm => 'Are you sure?', :method => :delete %>
+  </span>
+  
+<% end %>

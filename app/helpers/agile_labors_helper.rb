@@ -1,0 +1,2 @@
+module AgileLaborsHelper
+end

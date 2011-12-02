@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110527140259) do
+ActiveRecord::Schema.define(:version => 20110721185830) do
+
+  create_table "agile_labors", :force => true do |t|
+    t.text     "body",       :limit => 255
+    t.string   "labor_type"
+    t.string   "exec_order"
+    t.datetime "start_in"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+  end
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -51,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20110527140259) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "position"
   end
 
   create_table "users", :force => true do |t|

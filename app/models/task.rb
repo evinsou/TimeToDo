@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-
+  acts_as_list
 	validates :body, :presence => true,
                    :length => {:within => 4..60} 
 

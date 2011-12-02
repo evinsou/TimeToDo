@@ -1,0 +1,53 @@
+<% for agile_labor in @agile_labors %>
+  <% case agile_labor.exec_order %>
+    <% when "Current" %>
+      <div class="Current">
+        <%= render agile_labor %>
+      </div><br />
+    <% when "Backlog" %>
+      <div class="Backlog">
+        <%= render agile_labor %>
+      </div><br />
+    <% when "Icebox"%>
+      <div class="Icebox">
+        <%= render agile_labor %>
+      </div><br />        
+    <% end %>
+<% end %>
+  <% if agile_labor.exec_order == 'Current' %>
+    <%= render agile_labor %>
+  <% end %>
+  <div id="current_agile_labors">
+    <% render @agile_labors %>
+  </div>
+
+  <div id="backlog_agile_labors">
+    <% render @agile_labors %>
+  </div>
+
+  <div id="icebox_agile_labors">
+    <% render @agile_labors %>
+  </div>
+
+<% @agile_labors.each do |agile_labor| %>
+  <% case agile_labor.exec_order %>
+    <% when "Current" %>
+    <td>
+      <div class="Current">
+        <%= render agile_labor %>
+      </div>
+    </td>
+    <% when "Backlog" %>
+    <td>
+      <div class="Backlog">
+        <%= render agile_labor %>
+      </div>
+    </td>
+    <% when "Icebox"%>
+    <td>
+      <div class="Icebox">
+        <%= render agile_labor %>
+      </div>
+    </td>
+    <% end %>
+<% end %>

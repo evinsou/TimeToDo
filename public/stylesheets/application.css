@@ -1,10 +1,8 @@
-* {
-  margin: 0 auto;
-}
 
 body {
   background-color: #fff;
-  color: #333;
+  width: 1024px;
+  margin: 0 auto;
 }
 
 body, p, ol, ul, td {
@@ -37,8 +35,12 @@ a:hover {
 .notice { color: green; }
 .alert { color: red; }
 
+.handle:hover {
+  cursor: move;
+}
+
 #header, #main, #footer {
-  width: 800px;
+
 }
 
 #header {
@@ -80,10 +82,6 @@ a:hover {
   border-bottom: 4px solid #ccc;
 }
 
-#header p {
-  float: right;
-}
-
 #main h1 {
   font-size: 16px;
   padding: 10px 0;
@@ -91,7 +89,10 @@ a:hover {
   margin-bottom: 10px;
 }
 
-#main table{
+#main li {
+  list-style-type: none;
+}
+#main table{ /* from here*/
   margin: 0;
 }
 
@@ -99,7 +100,7 @@ a:hover {
   text-align: left;
 }
 
-#main form br{
+#main form br{ /* to here look at index, first page */
   display: none;
   float: left;
 }
@@ -111,20 +112,30 @@ a:hover {
   padding-right: 10px;
   float: left;
   line-height: 21px;
-  vertical-align: center;
   background-color: #F0F0F0;
   border: 2px solid #ccc;
   margin-right: 10px;
 }
+/*index*/
+#main div.white_square, #main  div.orange_square, #main div.black_square {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+#main  div.orange_square, #main div.black_square {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+}
 
 #main form .field .selectField {
-  width: 200px;
+  width: 220px;
   display: table;
   padding: 10px 10px 10px 0px;
   float: left;
+  margin: 10px;
 }
 
-#main form .field .selectField label .check_box_label {
+#main form .check_box_label {
   width: auto;
   text-align: right;
   padding-top: 20px;
@@ -135,7 +146,7 @@ a:hover {
   border: 2px solid #fbf52a;
   border: none;
 }
-#main form .field .selectField label .radio_button_label {
+#main form  .radio_button_label {
   width: auto;
   text-align: left;
   padding-right: 10px;
@@ -144,6 +155,7 @@ a:hover {
   background-color: #000;
   border: 2px solid #fbf52a;
   border: none;
+  margin: 10px;
 }
 
 #main form .field, #main form .actions {
@@ -191,7 +203,7 @@ a:hover {
 #main h3:hover .actions{
   display: inline;
 }
-
+/*begin _form tasks*/
 .fieldWithErrors {
   display:table;
   float:left;
@@ -214,8 +226,8 @@ a:hover {
   width: 413px;
   border: 2px solid red;
   padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
   background-color: #f0f0f0;
   margin: 0;
 }
@@ -234,10 +246,136 @@ a:hover {
   color: #333;
   margin-bottom: 0;
   padding: 5px;
-  margin: 0;
+  margin: 2px auto;
 }
 
+#errorExplanation ul {
+  margin: 12px 6px 6px 12px;
+}
 #errorExplanation ul li {
   font-size: 12px;
   list-style: square;
+}
+/* end _form */
+/*tasks index*/
+#main div#switch_buttons {
+  height: 150px;
+  width: 100px;
+  margin: 5px;
+  float: right;
+  margin-top: 50px;
+  padding-top: 100px;
+}
+#main div#switch_buttons input{
+  margin: 5%;
+  padding: auto;
+  text-align: center;
+  }
+/* agile_labors index */
+
+/*second part*/
+/* form */
+#main form.new_agile_labor, form.edit_agile_labor {
+  width: 320px;
+  text-align: left;
+}
+
+#main form br{ /* to here look at index, first page */
+  display: none;
+  float: left;
+}
+
+#main form.new_agile_labor label, #main form.edit_agile_labor label {
+  width: 240px;
+  display: block;
+  text-align: left;
+  padding-left: 10px;
+  float: left;
+  line-height: 21px;
+  background-color: #F0F0F0;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+
+#main form.new_agile_labor .field, #main form.new_agile_labor .actions {
+  padding-top: 5px;
+  clear: both;
+}
+
+#main form.new_agile_labor .field .selectField, #main form.edit_agile_labor .field .selectField {
+  width: 220px;
+  display: table;
+  padding: 10px 10px 10px 0px;
+  float: left;
+  margin: 10px;
+}
+
+#main form.new_agile_labor input[type=text], #main form.new_agile_labor input[type=password], #main form.new_agile_labor textarea {
+  float: left;
+  font-size: 12px;
+  width: 253px;
+  padding: 2px;
+  border: 2px solid #ccc;
+}
+#main form.edit_agile_labor input[type=text], #main form.edit_agile_labor input[type=password], #main form.edit_agile_labor textarea {
+  float: left;
+  font-size: 12px;
+  width: 253px;
+  padding: 2px;
+  border: 2px solid #ccc;
+}
+
+#main form textarea {
+  height: 150px;
+}
+
+#main form input[type=submit] {
+  margin-left: 50px;
+  float:left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#main div.agile_labor {
+  width: 329px;
+  margin: 5px 5px 0 5px;
+}
+#main div.agile_labor .actions{
+  margin: 5px;
+  padding: 2px;
+}
+.exec_order {
+  width: auto;
+}
+#main table {
+  margin: 10px auto;
+}
+#main table th {
+  margin: 5px;
+  text-align: center;
+  width: 260px;
+}
+
+#main table td {
+  vertical-align:top;
+  border: solid 1px #000;
+}
+
+#main table tr td a {
+  padding: 2px;
+  margin: 5px;
+  text-align: justify;
+}
+
+#main table tr td p {
+  padding: 2px;
+  margin: 5px;
+  text-align: justify;
+}
+
+#main table tr td div span {
+  text-align: justify;
+  width: 260px;
+  padding: 20px;
+  margin: 15px;
 }
