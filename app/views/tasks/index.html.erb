@@ -2,37 +2,15 @@
 
 <% if logged_in? %>
 
-  <%= link_to "new task", new_task_path(@task, :format => :js), :remote => true, :id => 'new_task_link'%>  
+  <%= link_to "New task for js", new_task_path(@task, :format => :js), :remote => true, :id => 'new_task_link'%>  
   <%= link_to 'Agile Labors', agile_labors_path %>
   <%= link_to 'Tasks List', list_path %>
 <br />
-  <%= link_to "recent tasks", recent_tasks_path(@task, :format => :js), :remote => true, :id => 'recent_tasks_link'%>
-  <%= link_to "early tasks", early_tasks_path(@task, :format => :js), :remote => true, :id => 'early_tasks_link'%>
+  <%= link_to "Recent tasks", recent_tasks_path(@task, :format => :js), :remote => true, :id => 'recent_tasks_link'%>
+  <%= link_to "Early tasks", early_tasks_path(@task, :format => :js), :remote => true, :id => 'early_tasks_link'%>
       <div id="tasks">
         <%= render @tasks %>
-      </div>
-
-  <div id="sortTabs"> 
-    <ul>
-      <li><a href="#recent_tab"><%= link_to "recent tasks", recent_tasks_path(@task, :format => :js), :remote => true, :id => 'recent_tasks_link'%></a></li>
-      <li><a href="#early_tab"><%= link_to "early tasks", early_tasks_path(@task, :format => :js), :remote => true, :id => 'early_tasks_link'%></a></li>
-      <li><a href="#importance_tab">Importance</a></li>
-    </ul>
-    <div id="recent_tab">
-      <div id="tasks">
-        <%= render(:file => 'tasks/recent_tasks.html.erb')%>
-      </div>
-    </div>
-    <div id="early_tab">
-      <div id="tasks">
-        <%= render(:file => 'tasks/early_tasks.html.erb') %>"
-      </div>
-    </div>
-    <div id="importance_tab">
-      <p>Tab-x</p>
-    </div>
-  </div>
-
+      </div> 
   <br />
 
 <% end %>

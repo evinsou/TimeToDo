@@ -25,7 +25,7 @@ en:
   tasks:
     editing_task: Editing Task
     listing_tasks: Listing Tasks
-    new_task: New Task
+    new_task: New task
     task: task
     create_success: Task was successfully created.
     update_success: Task was successfully updated.

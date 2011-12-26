@@ -4,16 +4,14 @@ class AgileLaborsController < ApplicationController
   end
 
   def new
-
     @agile_labor = AgileLabor.new
   end
 
   def create
-
     @agile_labor = AgileLabor.new(params[:agile_labor])
 
     if @agile_labor.save
-      redirect_to @agile_labor, :notice => 'Agile task was successfully created'
+      redirect_to agile_labors_path, :notice => 'Agile task was successfully created'
     else
       render :action => 'new'
     end
@@ -31,15 +29,10 @@ class AgileLaborsController < ApplicationController
     @agile_labor = AgileLabor.find(params[:id])
 
     if @agile_labor.update_attributes(params[:agile_labor])
-      redirect_to @agile_labor, :notice => 'Agile Task updated'
+      redirect_to agile_labors_path, :notice => 'Agile Task updated'
     else
       render :action => 'edit'
     end
-  end
-
-  def show
-
-    @agile_labor = AgileLabor.find(params[:id])
   end
 
   def destroy

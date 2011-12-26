@@ -96,7 +96,6 @@ class TasksController < ApplicationController
     end
   end
 
-
   # PUT /tasks/1
   # PUT /tasks/1.xml
   def update

@@ -1,4 +1,4 @@
-<%= form_for(@task, :html => {:style => 'display: block;'}, :remote => true) do |f| %>
+<%= form_for(@task) do |f| %>
   <% if @task.errors.any? %>
     <div id="errorExplanation">
       <h2><%= pluralize(@task.errors.count, "error") %> 
@@ -19,27 +19,28 @@
     <div class="selectField">
     <%=f.label "Durations"%><br />
     <% for duration in Duration.all %>
-      <%= label_tag dom_id(duration), duration.time_limit, :class => "radio_button_label" %>
+      <%= label_tag dom_id(duration), duration.time_limit, :class => "radio_button_label" %> 
       <%= radio_button_tag 'task[duration_ids][]', duration.id,
-@task.duration_ids.include?(duration.id), :id => dom_id(duration) %>
+@task.duration_ids.include?(duration.id), :id => dom_id(duration) %><br />
     <% end %>
     </div>
+    
     <div class="selectField">
     <%=f.label "Categories"%><br />
     <% for category in Category.all %>
       <%= label_tag dom_id(category), category.name, :class => "check_box_label" %>
       <%= check_box_tag 'task[category_ids][]', category.id,
-@task.category_ids.include?(category.id), :id => dom_id(category) %>
+@task.category_ids.include?(category.id), :id => dom_id(category) %><br />
     <% end %>
   </div>
   </div>
   <div class="field">
     <%= f.label :start_in %><br />
-    <%= f.datetime_select :start_in %>
+    <%= f.datetime_select :start_in, :order => [:hour, :minute, :day, :month, :year]%>
   </div>
   <div class="field">
     <%= f.label :finish_by %><br />
-    <%= f.date_select :finish_by %>
+    <%= f.date_select :finish_by%>
   </div>
   <div class="actions">
     <%= submit_or_cancel(f) %>

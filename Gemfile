@@ -1,11 +1,22 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails'
+gem 'bson_ext'
 
+group :development, :test do
+  gem "capybara"
+  gem "cucumber"
+  gem "cucumber-rails", ">= 0.3.2" 
+  gem "launchy"
+  gem "rspec"
+  gem 'spork', '0.7.3'
+  gem "rspec-rails", ">= 2.0.0"
+  gem "database_cleaner"
+  gem "webrat", ">= 0.7.2"
+  gem 'sqlite3'
+end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
