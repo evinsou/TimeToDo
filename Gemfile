@@ -20,6 +20,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'thin'
 end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
