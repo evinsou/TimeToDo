@@ -3,6 +3,8 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'bson_ext'
 
+gem 'heroku'
+
 group :development, :test do
   gem "capybara"
   gem "cucumber"
@@ -14,6 +16,10 @@ group :development, :test do
   gem "database_cleaner"
   gem "webrat", ">= 0.7.2"
   gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
