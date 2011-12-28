@@ -1,9 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails'
-gem 'bson_ext'
-
-gem 'heroku'
 
 group :development, :test do
   gem "capybara"
@@ -16,11 +13,13 @@ group :development, :test do
   gem "database_cleaner"
   gem "webrat", ">= 0.7.2"
   gem 'sqlite3'
+  gem 'bson_ext'
 end
 
 group :production do
-  gem 'pg'
-  gem 'thin'
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+  gem 'pg'  
+  gem 'heroku'  
 end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
