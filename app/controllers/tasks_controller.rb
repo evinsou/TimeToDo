@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
 
-  before_filter :check_existance
+  #before_filter :check_existance
 
   def index
     @tasks = Task.all
@@ -15,9 +15,9 @@ class TasksController < ApplicationController
     end
   end
 
-  def recent_tasks # tasks_list
+=begin  def recent_tasks # tasks_list
     @tasks = Task.order("finish_by DESC")
-    flash.now.notice = "recent"
+   # flash.now.notice = "recent"
 
     respond_to do |format|
       format.html # recent_tasks.html.erb
@@ -27,7 +27,7 @@ class TasksController < ApplicationController
 
   def early_tasks # tasks_list_downward
     @tasks = Task.order("start_in ASC")
-    flash.now.notice = "early"
+    #flash.now.notice = "early"
 
     respond_to do |format|
       format.html # early_tasks.html.erb
@@ -47,7 +47,7 @@ class TasksController < ApplicationController
     end
     render :nothing => true
   end
-
+=end
   # GET /tasks/1
   # GET /tasks/1.xml
   def show
@@ -130,8 +130,9 @@ class TasksController < ApplicationController
     @task.destroy
 
     respond_to do |format|
-      format.html {redirect_to @tasks, :notice => 'Task deleted' }
+      format.html {redirect_to tasks_path, :notice => 'Task deleted' }
       format.js #{render :text => "$('#task_#{params[:id]}').remove();"}
     end
   end
+
 end

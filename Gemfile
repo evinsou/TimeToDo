@@ -18,8 +18,9 @@ end
 
 group :production do
   gem 'therubyracer-heroku', '0.8.1.pre3'
-  gem 'pg'  
-  gem 'heroku'  
+  gem 'pg'
+  gem 'heroku'
+  gem 'thin'
 end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
