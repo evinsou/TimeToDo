@@ -1,0 +1,300 @@
+/* begin general*/
+
+body
+  background-color: #fff
+  width: 1024px
+  margin: 0 auto
+  font-family: verdana, arial, helvetica, sans-serif
+  font-size: 13px
+  line-height: 18px
+
+p, ol, ul, td
+  font-family: verdana, arial, helvetica, sans-serif
+  font-size: 13px
+  line-height: 18px
+
+pre
+  background-color: #eee
+  padding: 10px
+  font-size: 11px
+
+p
+  padding: 5px
+
+a
+  color: #D95E16
+  padding: 0 2px
+  text-decoration: none
+  &:hover
+    background-color: #FF813C
+    color: #ffffff
+
+.notice
+  color: green
+
+.alert
+  color: red
+
+.handle:hover
+  cursor: move
+
+/*end general */
+
+#header
+  font-family: "Myriad Web Pro",Helvetica,Arial,sans-serif
+  letter-spacing: 1px
+  border-bottom: 5px solid #333333
+  color: #333333
+  padding: 15px 0
+  height: 35px
+  #user_bar
+    float: right
+    font-size: 10px
+
+#footer
+  border-top: 5px solid #C1C1C1
+  margin-top: 10px
+  clear: both
+  padding: 10px 0
+  text-align: center
+  font-size: 11px
+
+#header h1
+  padding-top: 14px
+  float: left
+  font-size: 30px
+  a
+    color: black
+    &:hover
+      background-color: white
+      color: black
+      border-bottom: 4px solid #ccc
+
+#main
+  h1
+    font-size: 18px
+    padding: 10px 0
+    border-bottom: 1px solid #bbb
+    margin-bottom: 10px
+  h2
+    margin: 5px 0 5px 0
+    font-size: 16px
+  li
+    list-style-type: none
+  table
+    /* from here */
+    margin: 0
+  form
+    text-align: left
+    br
+      /* to here look at index, first page */
+      display: none
+      float: left
+    label
+      width: 150px
+      display: block
+      text-align: right
+      padding-right: 10px
+      float: left
+      line-height: 21px
+      background-color: #F0F0F0
+      border: 2px solid #ccc
+      margin-right: 10px
+    .field .selectField
+      width: 175px
+      float: left
+      margin: 10px 0 10px 0
+    .check_box_label
+      width: auto
+      display: inline
+      text-align: right
+      line-height: 20px
+      padding-right: 10px
+      background-color: #fff
+      border: none
+      margin: 10px 40px 10px 10px
+    &.radio_button_label
+      width: auto
+      display: inline
+      text-align: left
+      padding-right: 10px
+      line-height: 21px
+      background-color: #fff
+      border: none
+      margin: 10px 40px 10px 10px
+    .field, .actions
+      padding-top: 10px
+      clear: both
+    input
+      &[type=text], &[type=password]
+        float: left
+        font-size: 14px
+        width: 220px
+        padding: 2px
+        border: 2px solid #ccc
+    textarea
+      float: left
+      font-size: 14px
+      width: 220px
+      padding: 2px
+      border: 2px solid #ccc
+    input
+      &[type=checkbox], &[type=radio]
+        margin: 12px
+        float: right
+        border: 2px solid #ccc
+    textarea
+      height: 150px
+    input[type=submit]
+      margin-left: 175px
+      float: left
+      margin-right: 10px
+      margin-bottom: 10px
+  h3
+    padding-top: 5px
+    height: 18px
+    .actions
+      display: none
+      font-weight: normal
+      font-size: 10px
+    &:hover .actions
+      display: inline
+
+/*index */
+/* new edit form for tasks*/
+
+.fieldWithErrors
+  display: table
+  float: left
+  margin: 0
+  width: 100px
+  margin-right: 10px
+
+#main form .fieldWithErrors
+  label
+    border: 2px solid red
+    margin-right: 0px
+  input, textarea
+    width: 250px
+    border: 2px solid red
+
+#errorExplanation
+  width: 413px
+  border: 2px solid red
+  padding: 7px
+  padding-bottom: 8px
+  margin-bottom: 10px
+  background-color: #f0f0f0
+  margin: 0
+  h2
+    text-align: left
+    font-weight: bold
+    padding: 5px 5px 5px 15px
+    font-size: 12px
+    margin: -7px
+    background-color: #c00
+    color: #fff
+  p
+    color: #333
+    margin-bottom: 0
+    padding: 5px
+    margin: 2px auto
+  ul
+    margin: 12px 6px 6px 12px
+    li
+      font-size: 12px
+      list-style: square
+
+/* end new edit form */
+
+/*tasks index */
+
+/* agile_labors index */
+
+.exec_order
+  width: auto
+
+#main
+  table
+    margin: 10px auto
+    th
+      margin: 5px
+      text-align: center
+      width: 340px
+    td
+      vertical-align: top
+      border: solid 1px #000
+      margin: 3px
+    tr td a
+      padding: 2px
+      margin: 5px
+      text-align: justify
+  .agile_labor
+    margin: 5px
+  section#agile_labors
+    font-size: 12px
+    width: 340px
+    div.aglab_field h3
+      margin: 5px
+      padding-top: 1px
+      height: 20px
+    form
+      text-align: left
+      label
+        width: 315px
+        display: block
+        text-align: left
+        padding: 2px 2px 2px 8px
+        float: left
+        font-size: 14px
+        font-variant: small-caps
+        background-color: #F0F0F0
+        margin: 5px 0px 5px 0px
+
+/* begin agile_labor form */
+
+.aglab_label
+  width: 315px
+  display: block
+  text-align: left
+  padding: 2px 2px 2px 8px
+  float: left
+  font-size: 14px
+  font-variant: small-caps
+  background-color: #F0F0F0
+  margin: 5px 0px 5px 0px
+
+#main
+  section#agile_labors form
+    .field, .actions
+      padding: 0
+      clear: both
+  .agile_labor span.actions
+    margin-top: 10px
+  section#agile_labors form
+    input[type=text], textarea
+      float: left
+      font-size: 14px
+      width: 319px
+      padding-left: 5px
+
+.aglab_field
+  float: left
+  font-size: 14px
+  width: 319px
+  padding-left: 5px
+
+#main section#agile_labors form
+  textarea
+    height: 60px
+  input[type=submit]
+    margin-left: 75px
+
+select
+  &#agile_labor_exec_order, &#agile_labor_labor_type
+    margin-left: 75px
+
+.aglab_field +.aglab_field
+  margin-top: 5px
+
+/* end agile_labor form */

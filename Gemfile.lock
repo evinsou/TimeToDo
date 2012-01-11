@@ -62,6 +62,7 @@ GEM
     ffi (1.0.11)
     gherkin (2.7.1)
       json (>= 1.4.6)
+    haml (3.1.4)
     heroku (2.17.0)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
@@ -127,6 +128,7 @@ GEM
       railties (~> 3.0)
       rspec (~> 2.7.0)
     rubyzip (0.9.5)
+    sass (3.1.12)
     selenium-webdriver (2.15.0)
       childprocess (>= 0.2.1)
       ffi (~> 1.0.9)
@@ -166,12 +168,14 @@ DEPENDENCIES
   cucumber
   cucumber-rails (>= 0.3.2)
   database_cleaner
+  haml
   heroku
   launchy
   pg
   rails
   rspec
   rspec-rails (>= 2.0.0)
+  sass
   spork (= 0.7.3)
   sqlite3
   therubyracer-heroku (= 0.8.1.pre3)

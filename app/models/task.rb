@@ -8,7 +8,7 @@ class Task < ActiveRecord::Base
   has_and_belongs_to_many :categories
 
 	def time_for_execute
-			"Time for execute #{finish_by.to_date} - #{start_in.to_date}"
+	  "Time for execute #{finish_by.to_date} - #{start_in.to_date}"
 	end
 
   def owned_by?(owner)

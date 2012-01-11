@@ -1,214 +1,175 @@
 /* begin general */
 body {
-  background-color: #fff;
+  background-color: white;
   width: 1024px;
   margin: 0 auto;
-}
-
-body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px;
-}
+  line-height: 18px; }
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
 
 pre {
-  background-color: #eee;
+  background-color: #eeeeee;
   padding: 10px;
-  font-size: 11px;
-}
+  font-size: 11px; }
 
 p {
-  padding: 5px;
-}
+  padding: 5px; }
 
 a {
-  color:#D95E16;
-  padding:0 2px;
-  text-decoration:none;
-}
+  color: #d95e16;
+  padding: 0 2px;
+  text-decoration: none; }
+  a:hover {
+    background-color: #ff813c;
+    color: white; }
 
-a:hover {
-  background-color:#FF813C;
-  color:#ffffff;
-}
+.notice {
+  color: green; }
 
-.notice { color: green; }
-.alert { color: red; }
+.alert {
+  color: red; }
 
 .handle:hover {
-  cursor: move;
-}
-/*end general*/
+  cursor: move; }
+
+/*end general */
 #header {
-  font-family:"Myriad Web Pro",Helvetica,Arial,sans-serif;
+  font-family: "Myriad Web Pro", Helvetica, Arial, sans-serif;
   letter-spacing: 1px;
   border-bottom: 5px solid #333333;
-  color:#333333;
+  color: #333333;
   padding: 15px 0;
-  height: 35px;
-}
-
-#header #user_bar {
-  float: right;
-  font-size: 10px;
-}
+  height: 35px; }
+  #header #user_bar {
+    float: right;
+    font-size: 10px; }
 
 #footer {
-  border-top: 5px solid #C1C1C1;
+  border-top: 5px solid #c1c1c1;
   margin-top: 10px;
-  clear:both;
+  clear: both;
   padding: 10px 0;
   text-align: center;
-  font-size: 11px;
-}
+  font-size: 11px; }
 
 #header h1 {
   padding-top: 14px;
   float: left;
-  font-size: 30px;
-}
-
-#header h1 a{
-  color: black;
-}
-
-#header h1 a:hover {
-  background-color: white;
-  color: black;
-  border-bottom: 4px solid #ccc;
-}
+  font-size: 30px; }
+  #header h1 a {
+    color: black; }
+    #header h1 a:hover {
+      background-color: white;
+      color: black;
+      border-bottom: 4px solid #cccccc; }
 
 #main h1 {
   font-size: 18px;
   padding: 10px 0;
-  border-bottom: 1px solid #bbb;
-  margin-bottom: 10px;
-}
-
+  border-bottom: 1px solid #bbbbbb;
+  margin-bottom: 10px; }
 #main h2 {
   margin: 5px 0 5px 0;
-  font-size: 16px;
-}
-
+  font-size: 16px; }
 #main li {
-  list-style-type: none;
-}
-#main table{ /* from here*/
-  margin: 0;
-}
-/*index*/
-/* new edit form for tasks*/
-#main form{
-  text-align: left;
-}
-
-#main form br{ /* to here look at index, first page */
-  display: none;
-  float: left;
-}
-
-#main form label {
-  width: 150px;
-  display: block;
-  text-align: right;
-  padding-right: 10px;
-  float: left;
-  line-height: 21px;
-  background-color: #F0F0F0;
-  border: 2px solid #ccc;
-  margin-right: 10px;
-}
-
-#main form .field .selectField {
-  width: 175px;
-  float: left;
-  margin: 10px 0 10px 0;
-}
-
-#main form .check_box_label {
-  width: auto;
-  display: inline;
-  text-align: right;
-  line-height: 20px;
-  padding-right: 10px;
-  background-color: #fff;  
-  border: none;
-  margin: 10px 40px 10px 10px;
-}
-
-#main form  .radio_button_label {
-  width: auto;
-  display:inline; 
-  text-align: left;
-  padding-right: 10px;
-  line-height: 21px;
-  background-color: #fff;
-  border: none;
-  margin: 10px 40px 10px 10px;
-}
-
-#main form .field, #main form .actions {
-  padding-top: 10px;
-  clear: both;
-}
-
-#main form input[type=text], #main form input[type=password], #main form textarea {
-  float: left;
-  font-size: 14px;
-  width: 220px;
-  padding: 2px;
-  border: 2px solid #ccc;
-}
-
-#main form input[type=checkbox], #main form input[type=radio] {
-  margin: 12px;  
-  float: right;
-  border: 2px solid #ccc;
-}
-
-#main form textarea {
-  height: 150px;
-}
-
-#main form input[type=submit] {
-  margin-left: 175px;
-  float:left;
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-
+  list-style-type: none; }
+#main table {
+  /* from here */
+  margin: 0; }
+#main form {
+  text-align: left; }
+  #main form br {
+    /* to here look at index, first page */
+    display: none;
+    float: left; }
+  #main form label {
+    width: 150px;
+    display: block;
+    text-align: right;
+    padding-right: 10px;
+    float: left;
+    line-height: 21px;
+    background-color: #f0f0f0;
+    border: 2px solid #cccccc;
+    margin-right: 10px; }
+  #main form .field .selectField {
+    width: 175px;
+    float: left;
+    margin: 10px 0 10px 0; }
+  #main form .check_box_label {
+    width: auto;
+    display: inline;
+    text-align: right;
+    line-height: 20px;
+    padding-right: 10px;
+    background-color: white;
+    border: none;
+    margin: 10px 40px 10px 10px; }
+  #main form.radio_button_label {
+    width: auto;
+    display: inline;
+    text-align: left;
+    padding-right: 10px;
+    line-height: 21px;
+    background-color: white;
+    border: none;
+    margin: 10px 40px 10px 10px; }
+  #main form .field, #main form .actions {
+    padding-top: 10px;
+    clear: both; }
+  #main form input[type=text], #main form input[type=password] {
+    float: left;
+    font-size: 14px;
+    width: 220px;
+    padding: 2px;
+    border: 2px solid #cccccc; }
+  #main form textarea {
+    float: left;
+    font-size: 14px;
+    width: 220px;
+    padding: 2px;
+    border: 2px solid #cccccc; }
+  #main form input[type=checkbox], #main form input[type=radio] {
+    margin: 12px;
+    float: right;
+    border: 2px solid #cccccc; }
+  #main form textarea {
+    height: 150px; }
+  #main form input[type=submit] {
+    margin-left: 175px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px; }
 #main h3 {
   padding-top: 5px;
-  height: 18px;
-}
+  height: 18px; }
+  #main h3 .actions {
+    display: none;
+    font-weight: normal;
+    font-size: 10px; }
+  #main h3:hover .actions {
+    display: inline; }
 
-#main h3 .actions{
-  display:none;
-  font-weight: normal;
-  font-size: 10px;
-}
-
-#main h3:hover .actions{
-  display: inline;
-}
-
+/*index */
+/* new edit form for tasks */
 .fieldWithErrors {
-  display:table;
-  float:left;
-  margin:0;
-  width:100px;
-  margin-right: 10px;
-}
+  display: table;
+  float: left;
+  margin: 0;
+  width: 100px;
+  margin-right: 10px; }
 
-#main form .fieldWithErrors label{
+#main form .fieldWithErrors label {
   border: 2px solid red;
-  margin-right: 0px;
-}
-
-#main form .fieldWithErrors input, #main form .fieldWithErrors textarea{
+  margin-right: 0px; }
+#main form .fieldWithErrors input, #main form .fieldWithErrors textarea {
   width: 250px;
-  border: 2px solid red;
-}
+  border: 2px solid red; }
 
 #errorExplanation {
   width: 413px;
@@ -217,118 +178,106 @@ a:hover {
   padding-bottom: 8px;
   margin-bottom: 10px;
   background-color: #f0f0f0;
-  margin: 0;
-}
+  margin: 0; }
+  #errorExplanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    background-color: #cc0000;
+    color: white; }
+  #errorExplanation p {
+    color: #333333;
+    margin-bottom: 0;
+    padding: 5px;
+    margin: 2px auto; }
+  #errorExplanation ul {
+    margin: 12px 6px 6px 12px; }
+    #errorExplanation ul li {
+      font-size: 12px;
+      list-style: square; }
 
-#errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-  margin: 2px auto;
-}
-
-#errorExplanation ul {
-  margin: 12px 6px 6px 12px;
-}
-#errorExplanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
 /* end new edit form */
-
-/*tasks index*/
-
+/*tasks index */
 /* agile_labors index */
 .exec_order {
-  width: auto;
-}
+  width: auto; }
+
 #main table {
-  margin: 10px auto;
-}
-#main table th {
-  margin: 5px;
-  text-align: center;
-  width: 340px;
-}
-
-#main table td {
-  vertical-align:top;
-  border: solid 1px #000;
-  margin: 3px;
-}
-
-#main table tr td a {
-  padding: 2px;
-  margin: 5px;
-  text-align: justify;
-}
-/* begin agile_labor form */
+  margin: 10px auto; }
+  #main table th {
+    margin: 5px;
+    text-align: center;
+    width: 340px; }
+  #main table td {
+    vertical-align: top;
+    border: solid 1px black;
+    margin: 3px; }
+  #main table tr td a {
+    padding: 2px;
+    margin: 5px;
+    text-align: justify; }
 #main .agile_labor {
-  margin: 5px;
-}
+  margin: 5px; }
 #main section#agile_labors {
   font-size: 12px;
-  width:340px;
-}
-#main section#agile_labors div.aglab_field h3 {
-  margin: 5px;
-  padding-top: 1px;
-  height: 20px;
-}
-#main section#agile_labors form {
-  text-align: left;
-}
+  width: 340px; }
+  #main section#agile_labors div.aglab_field h3 {
+    margin: 5px;
+    padding-top: 1px;
+    height: 20px; }
+  #main section#agile_labors form {
+    text-align: left; }
+    #main section#agile_labors form label {
+      width: 315px;
+      display: block;
+      text-align: left;
+      padding: 2px 2px 2px 8px;
+      float: left;
+      font-size: 14px;
+      font-variant: small-caps;
+      background-color: #f0f0f0;
+      margin: 5px 0px 5px 0px; }
 
-#main section#agile_labors form label, .aglab_label {
+/* begin agile_labor form */
+.aglab_label {
   width: 315px;
   display: block;
   text-align: left;
   padding: 2px 2px 2px 8px;
   float: left;
   font-size: 14px;
-  font-variant:small-caps;
-  background-color: #F0F0F0;  
-  margin: 5px 0px 5px 0px;
-}
+  font-variant: small-caps;
+  background-color: #f0f0f0;
+  margin: 5px 0px 5px 0px; }
 
 #main section#agile_labors form .field, #main section#agile_labors form .actions {
   padding: 0;
-  clear: both;
-}
-
+  clear: both; }
 #main .agile_labor span.actions {
-  margin-top: 10px;
-}
-
-#main section#agile_labors form input[type=text], #main section#agile_labors form textarea, .aglab_field {
+  margin-top: 10px; }
+#main section#agile_labors form input[type=text], #main section#agile_labors form textarea {
   float: left;
   font-size: 14px;
   width: 319px;
-  padding-left: 5px;
-}
+  padding-left: 5px; }
+
+.aglab_field {
+  float: left;
+  font-size: 14px;
+  width: 319px;
+  padding-left: 5px; }
 
 #main section#agile_labors form textarea {
-  height: 60px;
-}
+  height: 60px; }
+#main section#agile_labors form input[type=submit] {
+  margin-left: 75px; }
 
-#main section#agile_labors form input[type=submit], 
-select#agile_labor_exec_order,
-select#agile_labor_labor_type {
-  margin-left: 75px;
-}
+select#agile_labor_exec_order, select#agile_labor_labor_type {
+  margin-left: 75px; }
 
-.aglab_field +.aglab_field {
-  margin-top: 5px;
-}
+.aglab_field + .aglab_field {
+  margin-top: 5px; }
 
 /* end agile_labor form */

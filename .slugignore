@@ -1,11 +1,14 @@
 *.psd
 *.pdf
 .bundle
-db/*.sqlite3
-log/*.log
-tmp/
-features/
-spec/
-test/
+.git
 /draftcode
 /draft code
+db
+log
+tmp
+features
+spec
+test
+doc
+

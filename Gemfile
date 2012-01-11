@@ -6,6 +6,7 @@ group :development, :test do
   gem "capybara"
   gem "cucumber"
   gem "cucumber-rails", ">= 0.3.2" 
+  gem 'haml'
   gem "launchy"
   gem "rspec"
   gem 'spork', '0.7.3'
@@ -13,6 +14,7 @@ group :development, :test do
   gem "database_cleaner"
   gem "webrat", ">= 0.7.2"
   gem 'sqlite3'
+  gem 'sass'
   gem 'bson_ext'
 end
 
