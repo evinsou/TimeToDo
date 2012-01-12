@@ -1,0 +1,48 @@
+<h2>Lists </h2>
+<table>
+  <tr>
+  <th>
+    <h2>Current</h2>
+  </th>
+  <th>
+    <h2>Backlog</h2>
+  </th>
+  <th>
+    <h2>Icebox</h2>
+  </th>
+  </tr>
+  <tr>
+    <td>
+      <div class="Current">
+        <% @agile_labors.each do |agile_labor| %>
+          <% if agile_labor.exec_order == 'Current' %>
+            <%= render agile_labor %>
+          <% end %>
+        <% end %>
+      </div>
+    </td>
+    <td>
+      <div class="Backlog">
+        <% @agile_labors.each do |agile_labor| %>
+          <% if agile_labor.exec_order == 'Backlog' %>
+            <%= render agile_labor %>
+          <% end %>
+        <% end %>
+      </div>
+    </td>
+    <td>
+      <div class="Icebox">
+        <% @agile_labors.each do |agile_labor| %>
+          <% if agile_labor.exec_order == 'Icebox' %>
+            <%= render agile_labor %>
+          <% end %>
+        <% end %>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<% render @agile_labors %>
+
+<%= link_to 'New agile task', new_agile_labor_path %>
+<%= link_to 'on top', tasks_path %>

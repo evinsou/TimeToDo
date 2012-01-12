@@ -1,0 +1,39 @@
+<section id="agile_labors">
+<%= form_for(@agile_labor) do |f| %>
+  <% if @agile_labor.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(@agile_labor.errors.count, "error") %>
+      prohibited this agile task from being saved:</h2>
+      <ul>
+        <% @agile_labor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+    <%= f.label :labor_type %><br />
+    <%= f.select(:labor_type, {"Bug" => "Bug",
+                               "Feature" => "Feature"}, {:prompt => true}) %>
+  </div>
+  <div class="field">
+    <%= f.label :exec_order %><br />
+    <%= f.select(:exec_order, {"Current" => "Current",
+                               "Backlog" => "Backlog",
+                               "Icebox" => "Icebox"}, {:prompt => true}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+</section>

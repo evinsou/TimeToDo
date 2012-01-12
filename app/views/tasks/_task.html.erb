@@ -1,0 +1,20 @@
+<%=  div_for task do %>
+<li>
+  <h3>
+    <%= link_to task.body, task %>
+    <% if task.owned_by? current_user %>
+      <span class='actions'> 
+        <%= link_to t('general.edit'), edit_task_path(task) %>
+<!--        < #link_to t('general.delete') "/destroy_task/#{task.id}" >-->
+        <%= link_to t('general.delete'), task, :confirm => 'Are you sure?',
+                                               :method => :delete,
+                                               :remote => true %>
+      </span>
+    <% end %> 
+  </h3>
+  
+  <%= task.time_for_execute %>
+</li>
+<% end %>
+
+
