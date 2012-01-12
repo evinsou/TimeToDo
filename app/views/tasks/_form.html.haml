@@ -1,0 +1,40 @@
+= form_for(@task) do |f|
+  - if @task.errors.any?
+    #errorExplanation
+      %h2
+        = pluralize(@task.errors.count, "error")
+        prohibited this task from being saved:
+      %ul
+        - @task.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :body
+    %br/
+    = f.text_field :body
+  .field
+    .selectField
+      = f.label "Durations"
+      %br/
+      - for duration in Duration.all
+        = label_tag dom_id(duration), duration.time_limit, :class => "radio_button_label"
+        = radio_button_tag 'task[duration_ids][]', duration.id,             |
+          @task.duration_ids.include?(duration.id), :id => dom_id(duration) |
+        %br/
+    .selectField
+      = f.label "Categories"
+      %br/
+      - for category in Category.all
+        = label_tag dom_id(category), category.name, :class => "check_box_label"
+        = check_box_tag 'task[category_ids][]', category.id,                |
+          @task.category_ids.include?(category.id), :id => dom_id(category) |
+        %br/
+  .field
+    = f.label :start_in
+    %br/
+    = f.datetime_select :start_in, :order => [:hour, :minute, :day, :month, :year]
+  .field
+    = f.label :finish_by
+    %br/
+    = f.date_select :finish_by
+  .actions
+    = submit_or_cancel(f)

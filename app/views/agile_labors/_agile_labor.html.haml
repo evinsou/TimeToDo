@@ -1,0 +1,15 @@
+= div_for agile_labor do
+  .aglab_label
+    title
+  .aglab_field
+    %h3= agile_labor.title
+  .aglab_label
+    body
+  .aglab_field
+    = agile_labor.body
+  .aglab_field
+    = agile_labor.labor_type
+  %br/
+  %span.actions
+    = link_to "Edit", edit_agile_labor_path(agile_labor)
+    = link_to "Delete", agile_labor, :confirm => 'Are you sure?', :method => :delete

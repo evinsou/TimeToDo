@@ -1,0 +1,10 @@
+%h1 Listing tasks
+%ul#tasks
+  - @tasks.each do |task|
+    %li{:id => "task_#{task.id}"}
+      %span.handle
+        [drag]
+      = task.body
+- sortable_element("tasks", :url => sort_tasks_path, :handle => "handle")
+= link_to "New", new_task_path
+= link_to "Back", tasks_path

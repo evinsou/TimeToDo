@@ -1,0 +1,31 @@
+%section#agile_labors
+  = form_for(@agile_labor) do |f|
+    - if @agile_labor.errors.any?
+      #errorExplanation
+        %h2
+          = pluralize(@agile_labor.errors.count, "error")
+          prohibited this agile task from being saved:
+        %ul
+          - @agile_labor.errors.full_messages.each do |msg|
+            %li= msg
+    .field
+      = f.label :title
+      %br/
+      = f.text_field :title
+    .field
+      = f.label :body
+      %br/
+      = f.text_area :body
+    .field
+      = f.label :labor_type
+      %br/
+      = f.select(:labor_type, {"Bug" => "Bug",      |
+        "Feature" => "Feature"}, {:prompt => true}) |
+    .field
+      = f.label :exec_order
+      %br/
+      = f.select(:exec_order, {"Current" => "Current", |
+        "Backlog" => "Backlog",                        |
+        "Icebox" => "Icebox"}, {:prompt => true})      |
+    .actions
+      = f.submit
