@@ -78,8 +78,45 @@ a {
   font-size: 16px; }
 #main li {
   list-style-type: none; }
-#main table {
-  /* from here */
+/*.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+
+body {margin:0px; padding:0px;}
+
+#Content {
+    position:absolute;
+    left:50%;
+    width:500px;
+    margin-top:50px;
+    margin-left:-266px;
+    padding:15px;
+    border:1px dashed #333;
+    background-color:#eee;
+    }*/
+#main div#benefit-list{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width:400px;}
+#main div.benefit-question, #main div.benefit-answer {
+  width: 320px;
+  margin:5px;}
+#main div.benefit-question {
+  color: #696969;
+  font-size: 1em;}
+#main div.benefit-answer {
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 1.4em;}
+ /* from here */
+#main table { 
   margin: 0; }
 #main form {
   text-align: left; }
