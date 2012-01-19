@@ -21,6 +21,15 @@
         <%= link_to t('users.new_user'), new_user_path%>
       <% end %>
     </div>
+    <div class="clock">   
+      <ul>
+        <li id="hours"></li>
+        <li id="doublePoint">:</li>
+        <li id="min"></li>
+        <li id="doublePoint">:</li>
+        <li id="sec"></li>
+      </ul>
+    </div>
   </div>
   <div id="main">  
     <%= content_tag :p, notice, :class => 'notice' if notice.present? %>
