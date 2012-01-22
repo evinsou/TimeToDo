@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   # GET /tasks.xml 
 
   def index
-    @tasks = Task.all
+    @tasks = Task.order('tasks.position ASC')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def recent_tasks # tasks_list
+  def recent_tasks 
     @tasks = Task.order("finish_by DESC")
    # flash.now.notice = "recent"
 
@@ -24,7 +24,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def early_tasks # tasks_list_downward
+  def early_tasks 
     @tasks = Task.order("start_in ASC")
     #flash.now.notice = "early"
 

@@ -19,9 +19,9 @@ Scenario: Edit task attributes
   When I choose task to update and changes fields with new values and click update
   Then I see page with updated task values
 
-@wip
+@checked
 Scenario: Delete task
   Given existing task for delete
-  When go on task page and click delete 
-  Then shows main page 
-  But without task have been deleted
+  When goes on task page and click delete 
+  Then shows main page without task have been deleted 
+

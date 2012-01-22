@@ -48,7 +48,8 @@ a {
   #header #user_bar {
     float: right;
     font-size: 12px; }
-
+  #header a{
+    float: left;}
 @font-face {
     font-family: 'BebasNeueRegular';
     src: url('BebasNeue-webfont.eot');
@@ -61,13 +62,11 @@ a {
 }
 
 #header div.clock {
-  width:400px;
-  float: right;
-  margin-right:210px;
+  float: left;
+  margin-left:200px;
   padding:10px;
   color:#fff; }
-#header div.clock ul { 
-  width:400px; 
+#header div.clock ul {
   margin: 0 auto;
   padding:0px; 
   list-style:none; 

@@ -11,7 +11,7 @@ TimeToDo::Application.routes.draw do
   match '/logout' => "sessions#destroy", :as => "logout" 
   match '/recent_tasks'=> "tasks#recent_tasks"#, :as => "recent_tasks"
   match '/early_tasks'=> "tasks#early_tasks"#, :as => "early_tasks"
-  match '/list' => 'tasks#list'
+
   match '/sort_tasks' => 'tasks#sort'
   match '*path', :to => "application#error_not_found"
 end

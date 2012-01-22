@@ -1,8 +1,8 @@
 And /^existing task for edit$/ do
-  @task = Task.create!(:id => '1', 
-                       :user_id => '1', 
+  @task = Task.create!(:id => 1, 
+                       :user_id => 1, 
                        :body => 'find text about spring flowers', 
-                       :start_in => '#{Time.parse("05-07-2009 19:00")}', 
+                       :start_in => "#{Time.parse("05-07-2009 19:00")}", 
                        :finish_by => Time.parse("05-08-2009 19:00")) 
 end
 

@@ -20,10 +20,6 @@ describe 'tasks/index.html.erb' do
     render
     rendered.should have_selector("a", :content => "Agile Labors", :href =>"/agile_labors")
   end
-  it 'renders Tasks List' do
-    render
-    rendered.should have_selector("a", :content => 'Tasks List', :href => "/list")
-  end
   it 'renders recent tasks' do
     render
     rendered.should have_selector("a", :content => "Recent tasks", :href =>"/recent_tasks.js")

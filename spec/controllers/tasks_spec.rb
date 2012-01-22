@@ -74,7 +74,7 @@ describe TasksController do
   describe "GET index" do
     it "show all products renders index page" do
       tasks = mock_model(Task)
-      Task.should_receive(:all).and_return(tasks)
+      Task.should_receive(:order).with('tasks.position ASC').and_return(tasks)
       get :index
     end
     it "renders index page" do

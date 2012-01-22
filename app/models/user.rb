@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
                       :length => {:within => 5..50},
                       :format => {:with => /^[^@][\w.-]+@[\w.]+[.][a-z]{2,4}$/i }
     validates :password, :confirmation => true,
-                         :length => {:within => 4..20},
+                         :length => {:within => 4..18},
                          :presence => true,
                          :if => :password_required?
 

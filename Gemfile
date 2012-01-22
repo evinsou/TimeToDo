@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails'
+gem 'acts_as_list'
 
 group :development, :test do
   gem "capybara"

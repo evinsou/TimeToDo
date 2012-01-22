@@ -31,3 +31,23 @@ end
 Then /^I should be on the tasks list page and see new record$/ do
   page.should have_content('cook supper to evening')
 end
+
+Given /^existing task for delete$/ do
+  @task = Task.create!(:id => 1, 
+                       :user_id => 1, 
+                       :body => 'find text about spring flowers', 
+                       :start_in => "#{Time.parse("05-07-2009 19:00")}", 
+                       :finish_by => Time.parse("05-08-2009 19:00"))
+end
+When /^goes on task page and click delete$/ do
+  visit '/login'
+  fill_in 'Email',  :with => @user.email
+  fill_in 'Password', :with => @user.password
+  click_button 'Login'
+  click_link 'find text about spring flowers'
+  click_link 'Delete'
+end
+Then /^shows main page without task have been deleted$/ do
+  page.should have_content"Task deleted"  
+  page.should_not have_content('find text about spring flowers')
+end
