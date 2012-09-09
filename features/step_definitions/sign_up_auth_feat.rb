@@ -1,8 +1,5 @@
-Given /^not yet created user$/ do
+Given /^I am on the main page without account$/ do
   @user = User.new(:id => 1,:email => 'zach@mailsen.com', :password => '1234')
-end
-
-And /^I am on the main page with out account$/ do
   visit root_path
 end
 
@@ -13,6 +10,8 @@ When /^click new user and fill form$/ do
   fill_in 'Password confirmation', :with => @user.password
   click_button 'Create User'
 end
-Then /^I am on main page and see message$/ do 
+Then /^I am on main page and see message$/ do
   page.should have_content("User successfully added.")
+#  @user.should_not be_new_record
 end
+
