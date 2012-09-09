@@ -1,28 +1,27 @@
 <% if logged_in? %>
 <h1>Listing Tasks</h1>
-
-  <%= link_to "New task for js", new_task_path(@task, :format => :js), :remote => true, :id => 'new_task_link'%>  
+  <%= link_to "New task for js", new_task_path(@task, :format => :js), :remote => true, :id => 'new_task_link'%>
   <%= link_to 'Agile Labors', agile_labors_path %>
-  
 <br />
-  <%= link_to "Recent tasks", recent_tasks_path(@task, :format => :js), :remote => true, :id => 'recent_tasks_link'%>
-  <%= link_to "Early tasks", early_tasks_path(@task, :format => :js), :remote => true, :id => 'early_tasks_link'%>
+  <%= link_to "Recent tasks", recent_tasks_tasks_path, :remote => true, :id => 'recent_tasks_link'%>
+  <%= link_to "Early tasks", early_tasks_tasks_path, :remote => true, :id => 'early_tasks_link'%>
+  <%= link_to "To sort tasks", list_tasks_path, :remote => true, :id => 'sort_tasks_link'%>
     <div id="tasks">
       <%= render @tasks %>
-    </div> 
+    </div>
   <br />
 <% else %>
+  <div id="benefit-list">
+    <div class="benefit-question">What is TimeToDo?</div>
+    <div class="benefit-answer">TimeToDo is task manager</div>
 
-<div id="benefit-list">
-  <div class="benefit-question">What is TimeToDo?</div>
-  <div class="benefit-answer">TimeToDo is task manager</div>
+    <div class="benefit-question">What is TimeToDo for?</div>
+    <div class="benefit-answer">TimeToDo is for scheduling and organizing tasks</div>
 
-  <div class="benefit-question">What is TimeToDo for?</div>
-  <div class="benefit-answer">TimeToDo is for scheduling and organizing tasks</div>
-
-  <div class="benefit-question">Whom is TimeToDo for?</div>
-  <div class="benefit-answer">TimeToDo is for everyone who want to become more efficient and have free time.</div>
-</div>
+    <div class="benefit-question">Whom is TimeToDo for?</div>
+    <div class="benefit-answer">TimeToDo is for everyone who want to become more efficient and have free time.</div>
+  </div>
 <% end %>
   <br />
 <%= link_to t('tasks.new_task'), new_task_path %>
+

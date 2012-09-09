@@ -1,7 +1,4 @@
-$("#tasks").hide();
-$("#recent_tasks").remove();
-$("<%= escape_javascript render(:file => 'tasks/recent_tasks.html.erb') %>").insertAfter('#tasks');
-$("#early_tasks").remove();
 
 
+$('#tasks').html("<%= escape_javascript render(:file => 'tasks/recent_tasks.html.erb') %>");
 

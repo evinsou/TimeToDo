@@ -3,7 +3,7 @@ require 'spec_helper'
 describe TasksController do
 
   describe "POST create" do
-    
+
     before(:each) do
       controller.stub(:authenticate).and_return(true)
       @task = mock_model(Task)
@@ -12,7 +12,7 @@ describe TasksController do
       controller.stub(:current_user).and_return(@current_user)
       @current_user.stub(:tasks).and_return(@tasks)
       @current_user.tasks.stub(:new).and_return(@task)
-      @task.stub(:save)      
+      @task.stub(:save)
     end
 
     context "user create" do
@@ -35,14 +35,14 @@ describe TasksController do
       before do
         @task.stub(:save).and_return(true)
       end
-#      it "sets a flash[:notice] message" do
-#        post :create
-#        assign[:notice].should eq("The task was saved successfully")
-#      end
+      it "sets a flash[:notice] message" do
+        post :create
+        flash[:notice].should eq("Task was successfully created.")
+      end
       it "redirects to Task index" do
         post :create
         response.should redirect_to task_path(@task)
-      end      
+      end
     end
 
     context "when the task fail to save" do
@@ -54,19 +54,16 @@ describe TasksController do
         assigns[:task].should eq(@task)
       end
       it "renders new template" do
-        post :create        
+        post :create
         response.should render_template "new"
       end
     end
   end
 
-  describe "GET show" do    
-
+  describe "GET show" do
     it 'shows created product' do
       task = mock_model(Task, :id => 1)
-
-      Task.should_receive(:find).with("1").and_return(task)# does @ sign stay here or not
-      
+      Task.should_receive(:find).with("1").and_return(task)
       get :show, :id => 1
     end
   end
@@ -90,14 +87,14 @@ describe TasksController do
 
   describe "GET new" do
     it "assigns new task" do
-      controller.stub(:authenticate).and_return(true)      
-      task = mock_model(Task)      
+      controller.stub(:authenticate).and_return(true)
+      task = mock_model(Task)
       Task.should_receive(:new).and_return(task)
       get :new
     end
     it "renders new task page" do
       controller.stub(:authenticate).and_return(true)
-      task = mock_model(Task)      
+      task = mock_model(Task)
       Task.stub(:new).and_return(task)
       get :new
       response.should render_template ("new")
@@ -105,47 +102,42 @@ describe TasksController do
   end
 
   describe "GET edit" do
-    it "finds task to edit" do
+    before do
       controller.stub(:authenticate).and_return(true)
-      task = mock_model(Task)
-      tasks = mock_model(Task)
-      current_user = mock_model(User)
-      controller.stub(:current_user).and_return(current_user)
-      current_user.stub(:tasks).and_return(tasks)
-      current_user.tasks.should_receive(:find).with("1").and_return(task)
-
-      get :edit, :id => 1
+      @task = mock_model(Task, :id => 1)
+      @tasks = mock_model(Task)
+      @current_user = mock_model(User)
+      controller.stub(:current_user).and_return(@current_user)
+      @current_user.stub(:tasks).and_return(@tasks)
+      @current_user.tasks.stub(:find).and_return(@task)
+    end
+    it "finds task to edit" do
+      @current_user.tasks.should_receive(:find).with("1").and_return(@task)
+      get :edit, :id => @task
     end
     it "renders edit page" do
-      #response.should render_template("edit")
+      get :edit, :id => @task
+      response.should render_template("edit")
     end
-    it "assigns @task to view" do#?
-      controller.stub(:authenticate).and_return(true)
-      @task = mock_model(Task)
-      tasks = mock_model(Task)
-      current_user = mock_model(User)
-      controller.stub(:current_user).and_return(current_user)
-      current_user.stub(:tasks).and_return(tasks)
-      current_user.tasks.stub(:find).with("1").and_return(@task)
+    it "assigns @task to view" do
       get :edit, :id => 1
       assigns[:task].should eq(@task)
     end
-  end  
+  end
 
   describe "PUT update" do
-    
 
     before(:each) do
       controller.stub(:authenticate).and_return(true)
-      @task = mock_model(Task)#.as_null_object
+      @task = mock_model(Task)
       @tasks = mock_model(Task)
       @current_user = mock_model(User).as_null_object
       controller.stub(:current_user).and_return(@current_user)
       @current_user.tasks.stub(:find).and_return(@task)
     end
 
-    it "finds task" do      
-      @task.stub(:update_attributes).and_return(true)       
+    it "finds task" do
+      @task.stub(:update_attributes).and_return(true)
       @current_user.tasks.should_receive(:find).and_return(@task)
       put :update, :id => 1
     end
@@ -158,10 +150,10 @@ describe TasksController do
         @task.should_receive(:update_attributes).and_return(true)
         put :update, :id => 1
       end
-#      it "message about successfully" do
-#        put :update, :id => 1
-#        assigns[:notice].should eq("product updated")
-#      end
+      it "message about successfully" do
+        put :update, :id => 1
+        flash[:notice].should eq("Task was successfully updated.")
+      end
       it "redirects to task page" do
         put :update, :id => 1
         response.should redirect_to @task
@@ -173,23 +165,18 @@ describe TasksController do
         @task.stub(:update_attributes).and_return(false)
       end
       it "assigns task to edit page" do
-        put :update, :id => 21        
+        put :update, :id => 21
         assigns[:task].should eq(@task)
       end
       it "redirects back to product page" do
-        put :update, :id => 21        
+        put :update, :id => 21
         response.should render_template "edit"
       end
-#      it "shows error message" do
-#        put :update, :id => 21
-#        assigns[:alert].should eq("some errors have been occur")
-#      end
     end
 
   end
 
   describe "DELETE destroy" do
-
     before(:each) do
       controller.stub(:authenticate).and_return(true)
       @task = mock_model(Task)
@@ -198,7 +185,7 @@ describe TasksController do
       controller.stub(:current_user).and_return(@current_user)
       @current_user.tasks.stub(:find).and_return(@task)
     end
-    it "finds a product" do      
+    it "finds a product" do
       @current_user.tasks.should_receive(:find).and_return(@task)
       delete :destroy, :id => 1
     end
@@ -213,3 +200,4 @@ describe TasksController do
   end
 
 end
+
