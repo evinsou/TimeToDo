@@ -29,10 +29,14 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group:development do
+  gem 'rspec'
+  gem "rspec-rails", ">= 2.0.0"
+  gem 'sqlite3'
+  gem 'bson_ext'
 end
 group :test do
   gem 'capybara'
-  gem 'rspec-rails'
+  gem 'rspec-rails', ">= 2.0.0"
   gem 'cucumber-rails', :require => false
   gem 'launchy'
   gem 'database_cleaner'
@@ -40,5 +44,9 @@ group :test do
   gem 'turn', '~> 0.8.3', :require => false
 end
 group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3'
+  gem 'pg'
+  gem 'heroku'
+  gem 'thin'
 end
 
