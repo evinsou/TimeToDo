@@ -2,25 +2,20 @@ require 'spec_helper'
 
 describe 'tasks/new.html.erb' do
 
-  let(:task) do
-    mock_model("Task").as_new_record.as_null_object
-  end
-
-  before do
-    assign(:task, task)
-  end
+  let!(:task) {mock_model("Task")}
+  before {assign(:task, task)}
 
   it 'renders page name' do
     render
     rendered.should have_selector('h1', :content => 'New task')
   end
 
-  it "renders a form to submit a task" do    
+  it "renders a form to submit a task" do
     render
     rendered.should have_selector("form",
       :method => "post",
       :action => tasks_path,
-    ) do |form|      
+    ) do |form|
       form.should have_selector("input", :type => "submit")
     end
   end
@@ -50,20 +45,20 @@ describe 'tasks/new.html.erb' do
       :method => "post",
       :action => tasks_path,
     ) do |form|
-      form.should have_selector("label", 
-        :for => "task_start_in", 
+      form.should have_selector("label",
+        :for => "task_start_in",
         :content => "Start in"
       )
       form.should have_selector("select",
-        :id=>"task_start_in_3i", 
+        :id=>"task_start_in_3i",
         :name=>"task[start_in(3i)]"
       )
       form.should have_selector("select",
-        :id=>"task_start_in_2i", 
+        :id=>"task_start_in_2i",
         :name=>"task[start_in(2i)]"
       )
       form.should have_selector("select",
-        :id=>"task_start_in_1i", 
+        :id=>"task_start_in_1i",
         :name=>"task[start_in(1i)]"
       )
     end
@@ -75,20 +70,20 @@ describe 'tasks/new.html.erb' do
       :method => "post",
       :action => tasks_path,
     ) do |form|
-      form.should have_selector("label", 
-        :for => "task_finish_by", 
+      form.should have_selector("label",
+        :for => "task_finish_by",
         :content => "Finish by"
       )
       form.should have_selector("select",
-        :id=>"task_finish_by_3i", 
+        :id=>"task_finish_by_3i",
         :name=>"task[finish_by(3i)]"
       )
       form.should have_selector("select",
-        :id=>"task_finish_by_2i", 
+        :id=>"task_finish_by_2i",
         :name=>"task[finish_by(2i)]"
       )
       form.should have_selector("select",
-        :id=>"task_finish_by_1i", 
+        :id=>"task_finish_by_1i",
         :name=>"task[finish_by(1i)]"
       )
     end
@@ -106,3 +101,4 @@ describe 'tasks/new.html.erb' do
     end
   end
 end
+

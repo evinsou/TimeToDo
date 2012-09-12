@@ -34,6 +34,9 @@ a {
 .alert {
   color: red; }
 
+.clear {
+  clear:both;}
+
 .handle:hover {
   cursor: move; }
 
@@ -68,35 +71,35 @@ a {
   color:#fff; }
 #header div.clock ul {
   margin: 0 auto;
-  padding:0px; 
-  list-style:none; 
+  padding:0px;
+  list-style:none;
   text-align:center; }
 #header ul li {
-  display:inline; 
-  font-size:4em; 
-  text-align:center; 
-  font-family:'BebasNeueRegular', Arial, Helvetica, sans-serif; 
+  display:inline;
+  font-size:4em;
+  text-align:center;
+  font-family:'BebasNeueRegular', Arial, Helvetica, sans-serif;
   text-shadow:0 0 4px #d95e16; }
 #header #doublePoint {
-  position:relative; 
-  -moz-animation:mymove 1s ease infinite; 
-  -webkit-animation:mymove 1s ease infinite; 
-  padding-left:4px; 
+  position:relative;
+  -moz-animation:mymove 1s ease infinite;
+  -webkit-animation:mymove 1s ease infinite;
+  padding-left:4px;
   padding-right:4px; }
 
 /* Simple Animation */
-@-webkit-keyframes mymove 
+@-webkit-keyframes mymove
 {
 0% {opacity:1.0; text-shadow:0 0 4px #d95e16;}
 50% {opacity:0; text-shadow:none; }
-100% {opacity:1.0; text-shadow:0 0 4px #d95e16; }	
+100% {opacity:1.0; text-shadow:0 0 4px #d95e16; }
 }
 
-@-moz-keyframes mymove 
+@-moz-keyframes mymove
 {
 0% {opacity:1.0; text-shadow:0 0 4px #d95e16;}
 50% {opacity:0; text-shadow:none; }
-100% {opacity:1.0; text-shadow:0 0 4px #d95e16; }	
+100% {opacity:1.0; text-shadow:0 0 4px #d95e16; }
 }
 
 #footer {
@@ -145,7 +148,7 @@ a {
   text-align: center;
   font-size: 1.4em;}
  /* from here */
-#main table { 
+#main table {
   margin: 0; }
 #main form {
   text-align: left; }
@@ -153,7 +156,11 @@ a {
     /* to here look at index, first page */
     display: none;
     float: left; }
-  #main form label {
+  #main form .field, #main form .actions {
+    width:60%;
+    padding-top: 10px;
+    clear: both; }
+  #main form label.task-label {
     width: 150px;
     display: block;
     text-align: right;
@@ -164,45 +171,54 @@ a {
     border: 2px solid #cccccc;
     margin-right: 10px; }
   #main form .field .selectField {
-    width: 175px;
-    float: left;
-    margin: 10px 0 10px 0; }
+    width: 750px;}
+  #main form .one-pair{
+    margin-top:8px;
+    float:left;}
+  #main form .one-pair:first-child{
+    margin-left:170px;}
+  #main form .radio-width {
+    width:104px;}
+  #main form .checkbox-width{
+    width:64px;}
+  #main form .one-pair label{
+    margin:4px 2px 4px 10px;}
+  #main form .one-pair input{
+    margin:0;}
+  #main form .radio_button_label {
+    width: auto;
+    text-align: left;
+    line-height: 18px;
+    background-color: white;
+    border: none;}
   #main form .check_box_label {
     width: auto;
-    display: inline;
     text-align: right;
-    line-height: 20px;
-    padding-right: 10px;
+    line-height: 18px;
     background-color: white;
-    border: none;
-    margin: 10px 40px 10px 10px; }
-  #main form.radio_button_label {
-    width: auto;
-    display: inline;
-    text-align: left;
-    padding-right: 10px;
-    line-height: 21px;
-    background-color: white;
-    border: none;
-    margin: 10px 40px 10px 10px; }
-  #main form .field, #main form .actions {
-    padding-top: 10px;
-    clear: both; }
+    border: none;}
   #main form input[type=text], #main form input[type=password] {
     float: left;
     font-size: 14px;
     width: 220px;
     padding: 2px;
     border: 2px solid #cccccc; }
+  #main form input[type=text]#email{
+    width: 220px;}
+  #main form input[type=checkbox], #main form input[type=radio] {
+    margin:5px 5px 4px 4px;
+    float: right;
+    border: 2px solid #cccccc; }
+ #main form input[type=checkbox] {
+    margin-left:30%;
+    float:none;}
+  #main form input[type=text]{
+    width:420px;}
   #main form textarea {
     float: left;
     font-size: 14px;
     width: 220px;
     padding: 2px;
-    border: 2px solid #cccccc; }
-  #main form input[type=checkbox], #main form input[type=radio] {
-    margin: 12px;
-    float: right;
     border: 2px solid #cccccc; }
   #main form textarea {
     height: 150px; }
@@ -347,3 +363,4 @@ select#agile_labor_exec_order, select#agile_labor_labor_type {
   margin-top: 5px; }
 
 /* end agile_labor form */
+

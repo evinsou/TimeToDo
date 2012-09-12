@@ -195,7 +195,7 @@ describe TasksController do
     end
     it "redirects to main page" do
       delete :destroy, :id => 1
-      response.should redirect_to :action => "index"
+      response.should redirect_to root_path
     end
   end
 

@@ -4,6 +4,7 @@ end
 
 When /^click log in and fill form with email and password$/ do
   visit root_path
+  save_and_open_page
   click_link 'Login'
   fill_in 'Email', :with => @user.email
   fill_in 'Password', :with => @user.password

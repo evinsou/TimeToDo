@@ -1,7 +1,7 @@
 <%= form_for(@task) do |f| %>
   <% if @task.errors.any? %>
     <div id="errorExplanation">
-      <h2><%= pluralize(@task.errors.count, "error") %> 
+      <h2><%= pluralize(@task.errors.count, "error") %>
       prohibited this task from being saved:</h2>
       <ul>
       <% @task.errors.full_messages.each do |msg| %>
@@ -11,38 +11,54 @@
     </div>
   <% end %>
   <div class="field">
-    <%= f.label :body %><br />
+    <%= f.label :body, :class =>'task-label' %><br />
     <%= f.text_field :body %>
+    <div class="clear"></div>
   </div>
-  
   <div class="field">
     <div class="selectField">
-    <%=f.label "Durations"%><br />
-    <% for duration in Duration.all %>
-      <%= label_tag dom_id(duration), duration.time_limit, :class => "radio_button_label" %> 
-      <%= radio_button_tag 'task[duration_ids][]', duration.id,
-@task.duration_ids.include?(duration.id), :id => dom_id(duration) %><br />
-    <% end %>
+      <%=f.label "Durations", :class =>'task-label'%><br />
+      <div class="clear"></div>
+      <div class="label-group">
+        <% for duration in Duration.all %>
+          <div class='one-pair radio-width'>
+            <%= label_tag dom_id(duration), duration.time_limit, :class => "radio_button_label" %>
+            <%= radio_button_tag 'task[duration_ids][]', duration.id,
+@task.duration_ids.include?(duration.id), :id => dom_id(duration) %>
+          </div>
+        <% end %>
+      </div>
+      <div class="clear"></div>
     </div>
-    
+  </div>
+  <div class="field">
     <div class="selectField">
-    <%=f.label "Categories"%><br />
-    <% for category in Category.all %>
-      <%= label_tag dom_id(category), category.name, :class => "check_box_label" %>
-      <%= check_box_tag 'task[category_ids][]', category.id,
-@task.category_ids.include?(category.id), :id => dom_id(category) %><br />
-    <% end %>
-  </div>
+      <%=f.label "Categories", :class =>'task-label'%><br />
+      <div class="clear"></div>
+      <div class="label-group">
+        <% for category in Category.all %>
+          <div class="one-pair checkbox-width">
+            <%= label_tag dom_id(category), category.name, :class => "check_box_label" %><br />
+            <%= check_box_tag 'task[category_ids][]', category.id,
+@task.category_ids.include?(category.id), :id => dom_id(category) %>
+          </div>
+        <% end %>
+        <div class="clear"></div>
+      </div>
+    </div>
   </div>
   <div class="field">
-    <%= f.label :start_in %><br />
+    <%= f.label :start_in, :class =>'task-label' %><br />
     <%= f.datetime_select :start_in, :order => [:hour, :minute, :day, :month, :year]%>
+    <div class="clear"></div>
   </div>
   <div class="field">
-    <%= f.label :finish_by %><br />
+    <%= f.label :finish_by, :class =>'task-label' %><br />
     <%= f.date_select :finish_by%>
+    <div class="clear"></div>
   </div>
   <div class="actions">
     <%= submit_or_cancel(f) %>
   </div>
 <% end %>
+

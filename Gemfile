@@ -1,30 +1,24 @@
 source 'http://rubygems.org'
 
-gem 'rails'
-gem 'acts_as_list'
+gem 'rails', '3.1.3'
 
-group :development, :test do
-  gem "capybara"
-  gem "cucumber"
-  gem "cucumber-rails", ">= 0.3.2"
-  gem "launchy"
-  gem "rspec"
-  gem 'spork', '0.7.3'
-  gem "rspec-rails", ">= 2.0.0"
-  gem "database_cleaner"
-  gem "webrat", ">= 0.7.2"
-  gem 'sqlite3'
-  gem 'bson_ext'
-end
-
-group :production do
-  gem 'therubyracer-heroku', '0.8.1.pre3'
-  gem 'pg'
-  gem 'heroku'
-  gem 'thin'
-end
 # Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+
+gem 'sqlite3'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails',   '~> 3.1.5'
+  gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier', '>= 1.0.3'
+end
+
+gem 'jquery-rails'
+
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -32,20 +26,19 @@ end
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
+# To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
-
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+group:development do
+end
+group :test do
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'cucumber-rails', :require => false
+  gem 'launchy'
+  gem 'database_cleaner'
+  # Pretty printed test output
+  gem 'turn', '~> 0.8.3', :require => false
+end
+group :production do
+end
 
