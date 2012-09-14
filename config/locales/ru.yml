@@ -51,8 +51,9 @@ activerecord:
           body:
             blank: "Не может быть пустым"
 
-date: 
+date:
   formats:
     default: "%d%m%Y"
     short: "%d %B"
-    long: "%d  %B %Y"    
+    long: "%d  %B %Y"
+

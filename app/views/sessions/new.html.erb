@@ -1,7 +1,7 @@
 <h1><%= t('sessions.login')%></h1>
-<%= form_tag session_path do%>
-  <div class="field"> 
-    <%= label_tag :email %><br />
+<%= form_tag session_path,:id =>'session' do%>
+  <div class="field">
+    <%= label_tag :email, params[:email] %><br />
     <%= text_field_tag :email %><br />
   </div>
   <div class="field">
@@ -13,4 +13,3 @@
   </div>
 <% end %>
 
-  

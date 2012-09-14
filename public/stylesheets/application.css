@@ -171,14 +171,14 @@ a {
     border: 2px solid #cccccc;
     margin-right: 10px; }
   #main form .field .selectField {
-    width: 750px;}
+    width: 770px;}
   #main form .one-pair{
     margin-top:8px;
     float:left;}
   #main form .one-pair:first-child{
     margin-left:170px;}
   #main form .radio-width {
-    width:104px;}
+    width:108px;}
   #main form .checkbox-width{
     width:64px;}
   #main form .one-pair label{
@@ -363,4 +363,9 @@ select#agile_labor_exec_order, select#agile_labor_labor_type {
   margin-top: 5px; }
 
 /* end agile_labor form */
+
+#main #session .field, #main #new_user .field {
+  width: 200px;}
+#main .field input[type=text]#user_email {
+  width:220px;}
 
