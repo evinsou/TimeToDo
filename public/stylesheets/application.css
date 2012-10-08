@@ -33,7 +33,10 @@ a {
 
 .alert {
   color: red; }
-
+.right{
+  float:right;}
+.left{
+  float:left;}
 .clear {
   clear:both;}
 
@@ -236,7 +239,38 @@ a {
     font-size: 10px; }
   #main h3:hover .actions {
     display: inline; }
+#main #tasks a{
+  color:#fff;}
+#main #tasks a:hover{
+  background-color:#fff;
+  color:#000;}
+#main #tasks li{
+  border-radius:10px;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  margin-top:5px;
+  width:25%;}
+#main #tasks li{
+  padding:2px 0 2px 2px;}
 
+#main #tasks .for-halfyear{
+  background-color: #69f;
+  border: 1px solid #69f;}
+#main #tasks .for-month{
+  background-color: #70db70;
+  border: 1px solid #70db70;}
+#main #tasks .for-week{
+  background-color: #ffad33;
+  border: 1px solid #ffad33;}
+#main #tasks .for-today{
+  background-color: #888;
+  border: 1px solid #888;}
+#main #tasks .for-yesterday{
+  background-color: #ff1919;
+  border: 1px solid #ff1919;}
+#main #tasks .no-durations{
+  background-color: #000;
+  border: 1px dashed #000;}
 /*index */
 /* new edit form for tasks */
 .fieldWithErrors {
@@ -282,10 +316,10 @@ a {
 
 /* end new edit form */
 /*tasks index */
+
 /* agile_labors index */
 .exec_order {
   width: auto; }
-
 #main table {
   margin: 10px auto; }
   #main table th {
@@ -294,73 +328,71 @@ a {
     width: 340px; }
   #main table td {
     vertical-align: top;
-    border: solid 1px black;
     margin: 3px; }
   #main table tr td a {
     padding: 2px;
     margin: 5px;
     text-align: justify; }
+#main #agile_labors {
+  margin: 0 auto;
+  width:980px;}
+#main #agile_labors #current-block, #main #agile_labors #backlog-block, #main #agile_labors #icebox-block{
+  width:320px;}
+#main #agile_labors #current-block h2,
+#main #agile_labors #backlog-block h2,
+#main #agile_labors #icebox-block h2{
+  text-align:center;}
+#main #agile_labors h3, #main #agile_labor_form h3 {
+  padding:1px;}
 #main .agile_labor {
-  margin: 5px; }
-#main section#agile_labors {
-  font-size: 12px;
-  width: 340px; }
-  #main section#agile_labors div.aglab_field h3 {
-    margin: 5px;
-    padding-top: 1px;
-    height: 20px; }
-  #main section#agile_labors form {
-    text-align: left; }
-    #main section#agile_labors form label {
-      width: 315px;
-      display: block;
-      text-align: left;
-      padding: 2px 2px 2px 8px;
-      float: left;
-      font-size: 14px;
-      font-variant: small-caps;
-      background-color: #f0f0f0;
-      margin: 5px 0px 5px 0px; }
-
+  padding: 0 3px;
+  margin: 2px 1px; }
 /* begin agile_labor form */
+#main section#agile_labor_form {
+  font-size: 12px;
+  width:340px;}
+  #main section#agile_labor_form h3 {
+    margin: 5px;
+    height: 20px; }
+#main section#agile_labor_form form {
+  text-align: left; }
+  #main section#agile_labor_form form label {
+    display: block;
+    text-align: left;
+    padding: 2px 2px 2px 8px;
+    font-size: 14px;
+    font-variant: small-caps;
+    background-color: #f0f0f0;
+    margin: 5px 0 5px 0; }
+.aglab_field {
+  font-size: 12px;
+  padding-left: 5px; }
 .aglab_label {
-  width: 315px;
-  display: block;
-  text-align: left;
-  padding: 2px 2px 2px 8px;
-  float: left;
-  font-size: 14px;
-  font-variant: small-caps;
   background-color: #f0f0f0;
-  margin: 5px 0px 5px 0px; }
-
-#main section#agile_labors form .field, #main section#agile_labors form .actions {
-  padding: 0;
-  clear: both; }
+  display: block;
+  font-size: 12px;
+  font-variant: small-caps;
+  margin: 2px 0;
+  padding: 2px 2px 2px 8px;
+  text-align: left;}
+#main section#agile_labor_form form .field, #main section#agile_labors form .actions {
+  padding: 0;}
 #main .agile_labor span.actions {
   margin-top: 10px; }
-#main section#agile_labors form input[type=text], #main section#agile_labors form textarea {
-  float: left;
+#main section#agile_labor_form form input[type=text], #main section#agile_labor_form form textarea {
   font-size: 14px;
-  width: 319px;
   padding-left: 5px; }
-
-.aglab_field {
-  float: left;
-  font-size: 14px;
-  width: 319px;
-  padding-left: 5px; }
-
-#main section#agile_labors form textarea {
+#main section#agile_labor_form form textarea {
   height: 60px; }
-#main section#agile_labors form input[type=submit] {
+#main section#agile_labor_form form input[type=submit],
+select#agile_labor_exec_order,
+select#agile_labor_labor_type {
   margin-left: 75px; }
-
-select#agile_labor_exec_order, select#agile_labor_labor_type {
-  margin-left: 75px; }
-
 .aglab_field + .aglab_field {
   margin-top: 5px; }
-
+.agile_labor:first-child{
+  border-bottom: 1px solid #000;}
 /* end agile_labor form */
+.red{
+  border:1px dashed red;}
 

@@ -1,28 +1,20 @@
-<%= div_for agile_labor do %>
-
+<%= div_for agile_labor, :class=>'red' do %>
   <div class="aglab_label">
-    title
+    <h3><%= agile_labor.title %></h3>
   </div>
-
-  <div class="aglab_field">
-      <h3><%= agile_labor.title %></h3>
-  </div>
-
-  <div class="aglab_label">
-    body
-  </div>
-
   <div class="aglab_field">
     <%= agile_labor.body %>
   </div>
-  <div class="aglab_field">
+  <div class="aglab_field left">
   <%= agile_labor.labor_type %>
   </div>
-  <br />
-
+  <div class="aglab_field right">
+  <%= agile_labor.created_at %>
+  </div>
+  <div class="clear"></div>
   <span class="actions">
     <%= link_to "Edit", edit_agile_labor_path(agile_labor) %>
     <%= link_to "Delete", agile_labor, :confirm => 'Are you sure?', :method => :delete %>
   </span>
-  
 <% end %>
+

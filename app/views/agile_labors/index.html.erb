@@ -1,48 +1,29 @@
-<h2>Lists </h2>
-<table>
-  <tr>
-  <th>
-    <h2>Current</h2>
-  </th>
-  <th>
-    <h2>Backlog</h2>
-  </th>
-  <th>
-    <h2>Icebox</h2>
-  </th>
-  </tr>
-  <tr>
-    <td>
-      <div class="Current">
-        <% @agile_labors.each do |agile_labor| %>
-          <% if agile_labor.exec_order == 'Current' %>
-            <%= render agile_labor %>
-          <% end %>
-        <% end %>
-      </div>
-    </td>
-    <td>
-      <div class="Backlog">
-        <% @agile_labors.each do |agile_labor| %>
-          <% if agile_labor.exec_order == 'Backlog' %>
-            <%= render agile_labor %>
-          <% end %>
-        <% end %>
-      </div>
-    </td>
-    <td>
-      <div class="Icebox">
-        <% @agile_labors.each do |agile_labor| %>
-          <% if agile_labor.exec_order == 'Icebox' %>
-            <%= render agile_labor %>
-          <% end %>
-        <% end %>
-      </div>
-    </td>
-  </tr>
-</table>
-
-<% render @agile_labors %>
-
+<% if @agile_labors.any? %>
+<div id="agile_labors">
+  <div id="current-block" class="left">
+<h2>Current</h2>
+   <% @current_labors.each do |agile_labor| %>
+     <%= render :partial => 'agile_labors/agile_labor', :locals => {:agile_labor=>agile_labor}  %>
+   <% end %>
+  </div>
+  <div id="backlog-block" class="left">
+<h2>Backlog</h2>
+    <% @backlogged_labors.each do |agile_labor| %>
+      <%= render :partial => 'agile_labors/agile_labor', :locals => {:agile_labor=>agile_labor}  %>
+    <% end %>
+  </div>
+  <div id="icebox-block" class="left">
+<h2>Icebox</h2>
+    <% @iceboxed_labors.each do |agile_labor| %>
+      <%= render :partial => 'agile_labors/agile_labor', :locals => {:agile_labor=>agile_labor}  %>
+    <% end %>
+  </div>
+</div>
+<% else %>
+  any labors by any categories
+<% end %>
+<div class="clear"></div>
+<br />
 <%= link_to 'New agile task', new_agile_labor_path %>
 <%= link_to 'on top', tasks_path %>
+

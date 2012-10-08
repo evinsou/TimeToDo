@@ -1,4 +1,4 @@
-<section id="agile_labors">
+<section id="agile_labor_form">
 <%= form_for(@agile_labor) do |f| %>
   <% if @agile_labor.errors.any? %>
     <div id="errorExplanation">
@@ -6,12 +6,11 @@
       prohibited this agile task from being saved:</h2>
       <ul>
         <% @agile_labor.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+          <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -34,6 +33,6 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-
 <% end %>
 </section>
+

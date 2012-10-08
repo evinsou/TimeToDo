@@ -1,9 +1,9 @@
 class TasksController < ApplicationController
 
-  before_filter :authenticate, :except => [:index, :show]
+  before_filter :authenticate#, :except => [:index, :show]
   #before_filter :check_existance
   # GET /tasks
-  # GET /tasks.xml 
+  # GET /tasks.xml
 
   def index
     @tasks = Task.order('tasks.position ASC')
@@ -14,7 +14,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def recent_tasks 
+  def recent_tasks
     @tasks = Task.order("finish_by DESC")
    # flash.now.notice = "recent"
 
@@ -24,7 +24,7 @@ class TasksController < ApplicationController
     end
   end
 
-  def early_tasks 
+  def early_tasks
     @tasks = Task.order("start_in ASC")
     #flash.now.notice = "early"
 
@@ -81,9 +81,9 @@ class TasksController < ApplicationController
   # POST /tasks.xml
   def create
     #@task = Task.new(params[:task])
-    @task = current_user.tasks.new(params[:task])    
+    @task = current_user.tasks.new(params[:task])
 
-  
+
     if @task.save
        respond_to do |format|
          format.html { redirect_to task_path(@task), :notice => t('tasks.create_success') }
@@ -137,3 +137,4 @@ class TasksController < ApplicationController
   end
 
 end
+

@@ -1,7 +1,7 @@
 class Task < ActiveRecord::Base
   acts_as_list
 	validates :body, :presence => true,
-                   :length => {:within => 4..60} 
+                   :length => {:within => 4..140}
 
 	belongs_to :user
   has_and_belongs_to_many :durations
@@ -17,3 +17,4 @@ class Task < ActiveRecord::Base
   end
 
 end
+
