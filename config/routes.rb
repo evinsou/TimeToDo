@@ -1,5 +1,7 @@
 TimeToDo::Application.routes.draw do
 
+  get "welcome/index"
+
   resources :tasks do
     post :sort, on: :collection
     get :recent_tasks, :on => :collection
@@ -20,7 +22,7 @@ TimeToDo::Application.routes.draw do
 #  match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
 #  match 'tasks/:id' => "tasks#destroy", :as => :destroy
   #match '/delete' => "tasks#destroy"
-  root :to => "tasks#index"
+  root :to => "welcome#index"
   match '/sort_tasks' => 'tasks#sort'
   match '*path', :to => "application#error_not_found"
 end

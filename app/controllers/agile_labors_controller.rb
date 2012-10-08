@@ -1,6 +1,10 @@
 class AgileLaborsController < ApplicationController
+  #before_filter :authenticate, :except => :index
   def index
     @agile_labors = AgileLabor.all
+    @current_labors = AgileLabor.current_labors
+    @backlogged_labors = AgileLabor.backlogged
+    @iceboxed_labors = AgileLabor.iceboxed
   end
 
   def new
@@ -44,5 +48,6 @@ class AgileLaborsController < ApplicationController
       format.html { redirect_to(agile_labors_path) }
       format.xml  { head :ok }
     end
-  end      
+  end
 end
+

@@ -2,7 +2,7 @@
   <% if @user.errors.any? %>
   <div id="errorExplanation">
     <h2><%= pluralize(@user.errors.count, "error") %>
-prohibited this user from being saved:</h2>    
+prohibited this user from being saved:</h2>
     <ul>
     <% @user.errors.full_messages.each do |msg| %>
       <li> <%= msg %></li>
@@ -17,13 +17,14 @@ prohibited this user from being saved:</h2>
   </div>
   <div class="field" >
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, placeholder: 'enter password' %>
   </div>
   <div class="field" >
     <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder: 'confirm it' %>
   </div>
   <div class="actions">
-    <%= submit_or_cancel(f) %>  
+    <%= submit_or_cancel(f) %>
   </div>
 <% end %>
+
