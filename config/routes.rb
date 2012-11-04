@@ -4,10 +4,10 @@ TimeToDo::Application.routes.draw do
 
   resources :tasks do
     post :sort, on: :collection
-    get :recent_tasks, :on => :collection
+    get :recent_tasks, on: :collection
     get :early_tasks, on: :collection
     get :list, on: :collection
-#    put
+    put :sort, on: :member
   end
   resources :users
   resources :agile_labors, :except => :show

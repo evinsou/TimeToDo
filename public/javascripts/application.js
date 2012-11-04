@@ -2,23 +2,21 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 //$('a[data-method="delete"]').live('ajax:success', function(){});
-
-$(document).ready(function(){
-  $('#tasks').sortable({
+$(function(){
+  $('#tasks-sorting').sortable({ //wrong id for experiment
     axis: 'y',
     dropOnEmpty: false,
-    cursor: 'crosshair',
     items: 'li',
+    handle: '.handle',
     opacity: 0.4,
     scroll: true,
-    forceHelperSize: true,
     update: function(){
       $.ajax({
         type: 'post',
-        data: $('#tasks').sortable('serialize'),
+        data: $('#tasks-sorting').sortable('serialize'),
         dataType: 'script',
         complete: function(request){
-          $('#tasks').effect('highlight');
+          $('#tasks-sorting').effect('highlight');
           },
         url: '/tasks/sort'
       })
@@ -29,7 +27,14 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('#sortTabs').tabs();
 });
-
+$(function(){
+  $('#color-legend h3').hover(function(){
+    $('#color-legend ul').css('display', 'block');
+  },
+  function(){
+    $('#color-legend ul').css('display', 'none');
+  });
+});
 $(document).ready(function() {
 
   var newDate = new Date();

@@ -8,8 +8,8 @@
 
 user = User.create :id =>1,
                    :email => 'ivan@email.com',
-                   :password => 'guessit',
-                   :password_confirmation => 'guessit'
+                   :password => 'sex',
+                   :password_confirmation => 'sex'
 user = User.create :id =>2,
                    :email => 'satur@example.com',
                    :password => 'ation',

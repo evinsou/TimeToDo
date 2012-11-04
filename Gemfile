@@ -30,7 +30,7 @@ group:development do
   gem "rspec-rails", ">= 2.0.0"
   gem 'sqlite3'
   gem 'bson_ext'
-gem 'sqlite3'
+  gem 'sqlite3'
 end
 group :test do
   gem 'capybara'

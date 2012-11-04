@@ -401,3 +401,18 @@ select#agile_labor_labor_type {
 #main .field input[type=text]#user_email {
   width:220px;}
 
+#main #color-legend h3 {
+  font-size: 16px;
+  line-height: 18px;
+  height:24px;
+  display:inline;
+  margin-bottom: 12px;}
+#main #color-legend ul {
+  display: none;
+  min-height: 20px;
+  max-height:50px;
+}
+
+#main #color-legend li{
+  display:inline-block;}
+
