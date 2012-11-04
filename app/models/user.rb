@@ -1,9 +1,9 @@
 require 'digest'
 
 class User < ActiveRecord::Base
-    attr_accessor :password    
+    attr_accessor :password
 
-    validates :email, :uniqueness => true, 
+    validates :email, :uniqueness => true,
                       :length => {:within => 5..50},
                       :format => {:with => /^[^@][\w.-]+@[\w.]+[.][a-z]{2,4}$/i }
     validates :password, :confirmation => true,
@@ -13,24 +13,24 @@ class User < ActiveRecord::Base
 
 		has_many :tasks, :order => 'start_in DESC, finish_by ASC',
 										 :dependent => :destroy
-
+    has_many :agile_labors, dependent: :destroy
     before_save :encrypt_new_password
 
     def self.authenticate (email, password)
       user = find_by_email(email)
       return user if user && user.authenticated?(password)
     end
- 
+
     def authenticated?(password)
       self.hashed_password == encrypt(password)
     end
 
     protected
-      def encrypt_new_password 
+      def encrypt_new_password
         return if password.blank?
         self.hashed_password = encrypt(password)
       end
- 
+
       def password_required?
         hashed_password.blank? || password.present?
       end
@@ -40,3 +40,4 @@ class User < ActiveRecord::Base
       end
 
 end
+

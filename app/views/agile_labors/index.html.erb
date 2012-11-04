@@ -1,4 +1,4 @@
-<% if @agile_labors.any? %>
+<% if @agile_labors.any? && current_user.agile_labors.any? %>
 <div id="agile_labors">
   <div id="current-block" class="left">
 <h2>Current</h2>

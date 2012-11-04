@@ -12,9 +12,11 @@
   <%= agile_labor.created_at %>
   </div>
   <div class="clear"></div>
-  <span class="actions">
-    <%= link_to "Edit", edit_agile_labor_path(agile_labor) %>
-    <%= link_to "Delete", agile_labor, :confirm => 'Are you sure?', :method => :delete %>
-  </span>
+  <% if agile_labor.owned_by? current_user %>
+    <span class="actions">
+      <%= link_to "Edit", edit_agile_labor_path(agile_labor) %>
+      <%= link_to "Delete", agile_labor, :confirm => 'Are you sure?', :method => :delete %>
+    </span>
+  <% end %>
 <% end %>
 

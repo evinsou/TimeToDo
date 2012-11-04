@@ -1,14 +1,14 @@
 class AgileLaborsController < ApplicationController
-  #before_filter :authenticate, :except => :index
+  before_filter :authenticate#, :except => :index
   def index
     @agile_labors = AgileLabor.all
-    @current_labors = AgileLabor.current_labors
-    @backlogged_labors = AgileLabor.backlogged
-    @iceboxed_labors = AgileLabor.iceboxed
+    @current_labors = current_user.agile_labors.current_labors
+    @backlogged_labors = current_user.agile_labors.backlogged
+    @iceboxed_labors = current_user.agile_labors.iceboxed
   end
 
   def new
-    @agile_labor = AgileLabor.new
+    @agile_labor = current_user.agile_labors.new
   end
 
   def create
