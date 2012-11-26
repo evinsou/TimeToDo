@@ -7,6 +7,8 @@ class Task < ActiveRecord::Base
   has_and_belongs_to_many :durations
   has_and_belongs_to_many :categories
 
+  scope :tasks_own_by, lambda {|user| where('user_id=?', user.id)}
+
 	def time_for_execute
 	  "Time for execute #{finish_by.to_date} - #{start_in.to_date}"
 	end

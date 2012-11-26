@@ -6,7 +6,7 @@ class TasksController < ApplicationController
   # GET /tasks.xml
 
   def index
-    @tasks = Task.order('tasks.position ASC')
+    @tasks = current_user.tasks
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class TasksController < ApplicationController
   end
 
   def recent_tasks
-    @tasks = Task.order("finish_by DESC")
+    @tasks = Task.tasks_own_by(current_user).order("finish_by DESC")
    # flash.now.notice = "recent"
 
     respond_to do |format|
@@ -25,7 +25,7 @@ class TasksController < ApplicationController
   end
 
   def early_tasks
-    @tasks = Task.order("start_in ASC")
+    @tasks = Task.tasks_own_by(current_user).order("start_in ASC")
     #flash.now.notice = "early"
 
     respond_to do |format|
@@ -35,11 +35,14 @@ class TasksController < ApplicationController
   end
 
   def list
-    @tasks = Task.order('tasks.position ASC')
+#    @tasks = Task .order('tasks.position ASC')
+    @tasks = Task.tasks_own_by(current_user).order('tasks.position ASC')
   end
 
   def sort
-    @tasks = Task.all
+#    @tasks = Task.all
+    @tasks = Task.tasks_own_by(current_user)
+
     @tasks.each do |task|
       task.position = params['task'].index(task.id.to_s) + 1
       task.save
@@ -50,7 +53,7 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.xml
   def show
-    @task = Task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -61,7 +64,7 @@ class TasksController < ApplicationController
   # GET /tasks/new
   # GET /tasks/new.xml
   def new
-    @task = Task.new
+    @task = current_user.tasks.new
 
 
 #    respond_to do |format|
@@ -135,6 +138,5 @@ class TasksController < ApplicationController
       format.js #{render :text => "$('#task_#{params[:id]}').remove();"}
     end
   end
-
 end
 
