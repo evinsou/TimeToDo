@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121023110330) do
+ActiveRecord::Schema.define(:version => 20121109141116) do
 
   create_table "agile_labors", :force => true do |t|
     t.text     "body",       :limit => 255
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20121023110330) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "position"
+    t.boolean  "is_done",    :default => false
   end
 
   create_table "users", :force => true do |t|

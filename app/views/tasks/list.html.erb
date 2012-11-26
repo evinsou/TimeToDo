@@ -1,15 +1,11 @@
-<h1> Listing tasks </h1>
-  <ul id="tasks-sorting">
+<div id="tasks-place">
+  <ul id="tasks-sorting" data-update-url="<%= sort_tasks_url %>">
     <% @tasks.each do |task| %>
       <%= content_tag_for :li, task do %>
-        <span class="handle">
-          [drag]
-        </span>
+        <span class="handle">[drag]</span>
         <%= task.body %>
       <% end %>
     <% end %>
   </ul>
-
-<%= link_to "New", new_task_path %>
-<%= link_to "Back", tasks_path %>
+</div>
 

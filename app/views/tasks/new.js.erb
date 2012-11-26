@@ -1,3 +1,4 @@
-$("<%= escape_javascript render(:file => 'tasks/new.html.erb') %>").insertAfter('#tasks');
+$("<%= j render(:file => 'tasks/new.html.erb') %>").insertAfter('#not-done-tasks');
 $('#new_task').slideDown();
 $('#new_task_link').hide();
+

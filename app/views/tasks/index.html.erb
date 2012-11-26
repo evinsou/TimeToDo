@@ -1,12 +1,7 @@
 <h1>Listing Tasks</h1>
-  <%= link_to t('tasks.new_task'), new_task_path %><br />
-  <%= link_to 'new JS task', new_task_path,  :remote => true %>
-  <div id="tasks">
-    <%= render @tasks %>
-  </div>
-<div>
+<div id="sort-tasks-menu">
   <nav>
-    <ul class="list">
+    <ul>
       <li><%= link_to "Recent tasks", recent_tasks_tasks_path, :remote => true, :id => 'recent_tasks_link'%></li>
       <li><%= link_to "Early tasks", early_tasks_tasks_path, :remote => true, :id => 'early_tasks_link'%></li>
       <li><%= link_to "Sort tasks", list_tasks_path, :id => 'list_tasks_link'%></li>
@@ -14,14 +9,47 @@
     </ul>
   </nav>
 </div>
+<div id="tasks">
+  <%= link_to t('tasks.new_task'), new_task_path %>  <%= link_to 'new JS task', new_task_path,  :remote => true %>
+  <div id="not-done-tasks">
+    <h2>unfinished Tasks</h2>
+    <% unless @tasks.nil? %>
+      <%= render @tasks if @tasks.any? %>
+    <% else %>
+      any tasks, sorry.
+    <% end %>
+  </div>
+  <div id="tasks-done">
+    <h2>finished Tasks</h2>
+  </div>
+</div>
 <div id='color-legend'>
   <h3>move mouse here what color means</h3>
   <ul>
-    <li>grey</li>
-    <li>red</li>
-    <li>green</li>
-    <li>blue</li>
-    <li>and one more some color</li>
+    <li>red on yesterday</li>
+    <li>grey for today</li>
+    <li>yellow for a week</li>
+    <li>green for a month</li>
+    <li>blue for half year</li>
   </ul>
 </div>
+<div id="tasks-tabs" style='display:none;'>
+    <ul>
+      <li><a href="#tabs-1">Recent tasks</a></li>
+      <li><a href="#tabs-2">Early tasks</a></li>
+      <li><a href="#tabs-3">Sort tasks</a></li>
+    </ul>
+    <div id="tabs-1">
+      <div id='tasks'></div>
+      <%= render(:file => 'tasks/recent_tasks.html.erb') %>
+    </div>
+    <div id="tabs-2">
+      <div id='tasks'></div>
+      <%= render(:file => 'tasks/early_tasks.html.erb') %>
+     </div>
+    <div id="tabs-3">
+      <div id='tasks'></div>
+      <%= render(:file => 'tasks/list.html.erb') %>
+    </div>
+  </div>
 

@@ -239,36 +239,71 @@ a {
     font-size: 10px; }
   #main h3:hover .actions {
     display: inline; }
-#main #tasks a{
+#main #color-legend h3 {
+  font-size: 16px;
+  line-height: 18px;
+  height:18px;
+  margin-bottom: 2px;}
+#main #color-legend ul {
+  display: none;
+  min-height: 10px;
+  max-height:15px;}
+#main #color-legend li{
+  display:inline-block;}
+#main #tasks-sorting a,
+#main #not-done-tasks a{
   color:#fff;}
-#main #tasks a:hover{
+#main #tasks-sorting a:hover,
+#main #not-done-tasks a:hover{
   background-color:#fff;
   color:#000;}
-#main #tasks li{
+#main #tasks-sorting h3,
+#main #not-done-tasks h3{
+  margin: 2px 0 2px 0;
+  font-size:16px;}
+#main #tasks-sorting li,
+#main #not-done-tasks li{
   border-radius:10px;
   -moz-border-radius:10px;
   -webkit-border-radius:10px;
-  margin-top:5px;
-  width:25%;}
-#main #tasks li{
-  padding:2px 0 2px 2px;}
+  margin-top:5px;}
+#main #not-done-tasks li{
+  padding: 0 0 2px 12px;}
 
-#main #tasks .for-halfyear{
+#main .task{
+  width: 250px;}
+#main .task h4{
+  margin:2px 0;}
+#main .task p{
+  margin: 0;
+  padding:0;}
+
+#main #tasks-tabs,
+#main #color-legend {
+  width:335px;}
+#main #sort-tasks-menu ul {
+  display:inline;
+  padding: 2px;}
+
+#main #sort-tasks-menu li {
+  display:inline;}
+
+#main #not-done-tasks .for-halfyear{
   background-color: #69f;
   border: 1px solid #69f;}
-#main #tasks .for-month{
+#main #not-done-tasks .for-month{
   background-color: #70db70;
   border: 1px solid #70db70;}
-#main #tasks .for-week{
+#main #not-done-tasks .for-week{
   background-color: #ffad33;
   border: 1px solid #ffad33;}
-#main #tasks .for-today{
+#main #not-done-tasks .for-today{
   background-color: #888;
   border: 1px solid #888;}
-#main #tasks .for-yesterday{
+#main #not-done-tasks .for-yesterday{
   background-color: #ff1919;
   border: 1px solid #ff1919;}
-#main #tasks .no-durations{
+#main #not-done-tasks .no-durations{
   background-color: #000;
   border: 1px dashed #000;}
 /*index */
@@ -388,9 +423,9 @@ a {
 select#agile_labor_exec_order,
 select#agile_labor_labor_type {
   margin-left: 75px; }
-.aglab_field + .aglab_field {
+#main .aglab_field + .aglab_field {
   margin-top: 5px; }
-.agile_labor:first-child{
+#main .agile_labor:first-child{
   border-bottom: 1px solid #000;}
 /* end agile_labor form */
 .red{
@@ -401,17 +436,6 @@ select#agile_labor_labor_type {
 #main .field input[type=text]#user_email {
   width:220px;}
 
-#main #color-legend h3 {
-  font-size: 16px;
-  line-height: 18px;
-  height:18px;
-  margin-bottom: 2px;}
-#main #color-legend ul {
-  display: none;
-  min-height: 10px;
-  max-height:15px;
-}
-
-#main #color-legend li{
-  display:inline-block;}
+.ui-widget-content {
+  padding:2px;}
 

@@ -3,11 +3,17 @@ TimeToDo::Application.routes.draw do
   get "welcome/index"
 
   resources :tasks do
-    post :sort, on: :collection
-    get :recent_tasks, on: :collection
-    get :early_tasks, on: :collection
-    get :list, on: :collection
-    put :sort, on: :member
+    collection do
+      post :sort
+      get :recent_tasks
+      get :early_tasks
+      get :list
+    end
+    member do
+      #put :sort
+      put :done
+      put :undone
+    end
   end
   resources :users
   resources :agile_labors, :except => :show

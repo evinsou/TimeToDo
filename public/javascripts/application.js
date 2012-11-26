@@ -24,12 +24,19 @@ $(function(){
   });
 });
 
-$(document).ready(function(){
+$(function(){
+  $('checked').click(function(){
+    alert('this');
+  });
+});
+
+$(function(){
   $('#sortTabs').tabs();
 });
 $(function(){
-  $('#color-legend h3').hover(function(){
+  $('#color-legend h3, #color-legend ul').hover(function(){
     $('#color-legend ul').css('display', 'block');
+    $('#color-legend ul').css('height', '50px');
   },
   function(){
     $('#color-legend ul').css('display', 'none');
