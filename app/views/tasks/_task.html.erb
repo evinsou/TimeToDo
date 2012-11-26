@@ -1,7 +1,7 @@
 <%= div_for task do %>
   <li class="<%= color_picker(have_durations(task)) %>">
-    <h3>
-      <%= link_to task.body, task %>
+    <h5>
+      <%= task.body %>
       <% if task.owned_by? current_user %>
         <span class='actions'>
           <%= link_to t('general.edit'), edit_task_path(task) %>
@@ -10,8 +10,8 @@
                                                  :remote => true %>
         </span>
       <% end %>
-    </h3>
-    <%= task.time_for_execute %><br />
+    </h5>
+    <%= task.time_for_execute %> <br />
   </li>
 <% end %>
 

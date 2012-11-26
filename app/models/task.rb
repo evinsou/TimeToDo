@@ -10,13 +10,16 @@ class Task < ActiveRecord::Base
   scope :tasks_own_by, lambda {|user| where('user_id=?', user.id)}
 
 	def time_for_execute
-	  "Time for execute #{finish_by.to_date} - #{start_in.to_date}"
+	  "Time for execute #{(finish_by.to_date - start_in.to_date).to_s.split('/')[0]}"
+	end
+
+	def time_left
+	  "Time left #{(finish_by.to_date - Time.now.to_date).to_s.split('/')[0]}"
 	end
 
   def owned_by?(owner)
     return false unless owner.is_a? User
     user == owner
   end
-
 end
 
