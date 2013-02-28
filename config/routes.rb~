@@ -1,6 +1,7 @@
 TimeToDo::Application.routes.draw do
 
   resources :tasks do
+<<<<<<< HEAD
     collection do
       post :sort
       get :recent_tasks
@@ -8,9 +9,16 @@ TimeToDo::Application.routes.draw do
       get :list
     end
     member do
+      #put :sort
       put :done
       put :undone
     end
+=======
+    post :sort, on: :collection
+    get :recent_tasks, :on => :collection
+    get :early_tasks, on: :collection
+    get :list, on: :collection
+>>>>>>> nextstep
   end
   resources :projects do
     resources :tasks, :controller => 'projects/tasks'

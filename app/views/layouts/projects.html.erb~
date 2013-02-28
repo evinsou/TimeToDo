@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>TimeToDo</title>
-  <%= stylesheet_link_tag 'application' %>
-  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag 'jquery-1.6.2.min', 'jquery-ui-1.8.14.custom.min', 'rails', 'application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -39,7 +39,6 @@
   <div id="footer">
     <p><%= t('general.footer')%> <br />
     Page created at <%= Time.now.strftime("%H:%M:%S %d-%m-%Y") %></p>
-    <p><%= link_to 'to projects example', projects_path %></p>
   </div>
 </body>
 </html>
