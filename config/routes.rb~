@@ -1,5 +1,8 @@
 TimeToDo::Application.routes.draw do
 
+  #match '/projects/:project_id/new_task' => "projects/tasks#new", :as => "new_project_task", via: :get
+  #match '/projects/:project_id/tasks/new' => "projects/tasks#new", :as => "new_project_task", via: :get
+
   resources :tasks do
     post :sort, on: :collection
     get :recent_tasks, :on => :collection

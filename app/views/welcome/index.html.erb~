@@ -8,21 +8,3 @@
 </div>
 <br />
 
-<% if current_user %>
-<div>
-  <nav>
-    <ul class="">
-      <li>
-        <%= link_to 'tasks', tasks_path %>
-      </li>
-      <li>
-        <%= link_to 'agile_labors', agile_labors_path %>
-      </li>
-      <li>
-        <%= link_to 'projects', projects_path %>
-      </li>
-    </ul>
-  </nav>
-</div>
-<% end %>
-

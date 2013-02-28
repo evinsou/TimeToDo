@@ -1,0 +1,10 @@
+<%= div_for project do %>
+  <h2><%= project.title %></h2> <br />
+  targets: <br />
+  <%= project.targets %> <br />
+  tasks within project: <br />
+  size <%= project.tasks.size %> 
+  count <%= project.tasks.count %> 
+  length  <%= project.tasks.length %> <br />
+  <%= link_to 'add task to project', new_project_task_path(project) %>
+<% end %>
