@@ -1,0 +1,23 @@
+<h1>All Projects</h1>
+
+<%= link_to 'new project', new_project_path %> <br />
+
+<div style='float:left;width:40%;'>
+  list of projects
+  <%= render @projects %>
+</div>
+<div style='float:left;width:25%;'>
+tasks of each project <br />
+  <% @projects.each do |p| %>
+    <div style="border-bottom:1px solid red;"><%= p.title %></div>
+    
+      <% p.tasks.each do |t| %>
+    <div style="border-left:1px solid black; padding:2px;">
+        <%= t.body %> <br />
+    </div>
+      <% end %>
+
+    <% end %>
+</div>
+
+

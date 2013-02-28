@@ -1,0 +1,22 @@
+<%= form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="errorExplanation">
+      <h2><%= pluralize(@task.errors.count, "error") %>
+      prohibited this task from being saved:</h2>
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :body, :class =>'task-label' %><br />
+    <%= f.text_field :body %>
+    <div class="clear"></div>
+  </div>
+  <div class="actions">
+    <%= submit_or_cancel(f) %>
+  </div>
+<% end %>
+

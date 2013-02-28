@@ -1,24 +1,13 @@
 TimeToDo::Application.routes.draw do
 
+  #match '/projects/:project_id/new_task' => "projects/tasks#new", :as => "new_project_task", via: :get
+  #match '/projects/:project_id/tasks/new' => "projects/tasks#new", :as => "new_project_task", via: :get
+
   resources :tasks do
-<<<<<<< HEAD
-    collection do
-      post :sort
-      get :recent_tasks
-      get :early_tasks
-      get :list
-    end
-    member do
-      #put :sort
-      put :done
-      put :undone
-    end
-=======
     post :sort, on: :collection
     get :recent_tasks, :on => :collection
     get :early_tasks, on: :collection
     get :list, on: :collection
->>>>>>> nextstep
   end
   resources :projects do
     resources :tasks, :controller => 'projects/tasks'

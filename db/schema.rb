@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20121109141116) do
+=======
+ActiveRecord::Schema.define(:version => 20121211134006) do
+>>>>>>> nextstep
 
   create_table "agile_labors", :force => true do |t|
     t.text     "body",       :limit => 255
@@ -46,6 +50,14 @@ ActiveRecord::Schema.define(:version => 20121109141116) do
     t.integer "task_id"
   end
 
+  create_table "projects", :force => true do |t|
+    t.string   "title"
+    t.text     "targets"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
@@ -65,6 +77,10 @@ ActiveRecord::Schema.define(:version => 20121109141116) do
     t.integer  "user_id"
     t.integer  "position"
     t.boolean  "is_done",    :default => false
+<<<<<<< HEAD
+=======
+    t.integer  "project_id"
+>>>>>>> nextstep
   end
 
   create_table "users", :force => true do |t|
